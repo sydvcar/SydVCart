@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>SydVC - About Me</title>
+    <meta name="description" content="My name is Sydney Carmer or 'SydVC' and I am a multimedia artist based in North Carolina. I'm known for my spooky but playful concepts and diverse ideas."/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <link rel="icon" type="image/x-icon" href="/CartoonSelfPortraitIcon.png"/>
+    <link rel="preload" href="/Fonts/acier-text-solid.ttf" as="font" type="font/ttf" crossorigin />
+    <link rel="preload" href="/Fonts/AdelleSansEXT-Regular.ttf" as="font" type="font/ttf" crossorigin />
+    <link rel="stylesheet" href="stylesheet.css"/>
+    <noscript><style>.script{display:none}</style></noscript>
+    <style>
+      #ResumeLinks
+      {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        gap: 2em;
+        margin-top:2em;
+      }
+      #ResumeLinks a
+      {
+        background-color: var(--ColorAccent);
+        display: inline-flex;
+        flex-direction: row;
+        padding:0.4em;
+        border-radius: 50%;
+        aspect-ratio: 1;
+        align-items: center;
+        width: 2em;
+        justify-content: center;
+      }
+      #ResumeLinks a:where(:hover,:focus)
+      {
+        color:var(--ColorHighlight);
+      }
+    </style>
+  </head>
+  <body>
+    <div id="topofpage" tabindex="-1" class="focusAnchor"></div>
+    <header>
+      <a id="Logo" class="icon" href="/">
+        <picture>
+          <img decoding="async" alt="" src="/CartoonSelfPortraitIcon.png"/>
+        </picture>
+        SydVC
+      </a>
+      <dialog id="sidebar" popover tabindex="-1">
+        <div tabindex="-1" class="focusAnchor" autofocus></div>
+        <form class="script" method="dialog" role="none"><button aria-label="Close"><i class="fa fa-xmark"></i></button></form>
+        <noscript><button popovertarget="sidebar" popovertargetaction="hide" aria-label="Close"><i class="fa fa-xmark"></i></button></noscript>
+        <nav aria-label="Site Pages">
+          <a href="/About" class="active"><span>About</span></a>
+          <a href="/DigitalMedia"><span>Digital Media</span></a>
+          <a href="/Illustration"><span>Illustration</span></a>
+        </nav>
+      </dialog>
+      <button popovertarget="sidebar" popovertargetaction="show" onclick="openModal(this.parentElement.querySelector('dialog'))" aria-label="Open sidebar nav"><i class="fa fa-bars"></i></button>
+    </header>
+    <noscript>
+      <dialog open aria-label="Scripting disabled notice" tabindex="-1">
+        <p>It appears scripting has been disabled or is unavailable. Some behavior may not work as expected</p>
+        <form method="dialog" role="none"><button aria-label="Close"><i class="fa fa-xmark"></i></button></form>
+      </dialog>
+    </noscript>
+    <main>
+      <article class="contentLane" aria-labelledby="MeetSydney">
+        <h1 id="MeetSydney">Meet Sydney Carmer</h1>
+        <div class="feature">
+          <picture>
+            <img decoding="async" alt="Sydney Carmer in a jacket" src="/About/Headshot.jpg" style="aspect-ratio: 1078/1344;"/>
+          </picture>
+          <div>
+            <p>My name is Sydney Carmer (she/they), also known by my online handle SydVC, and I am a multimedia artist based in North Carolina. In May 2024 I will earn my BFA in Art with a double concentration in Digital Media and Illustration at The University of North Carolina at Charlotte. I am also in the Arts + Architecture Honors Program, and double minored in Psychology and Art History.
+
+              I specialize in post-production film and motion graphics but pride myself on being a sort of jack-of-all-trades. Any creative challenge can be solved with my wide skill set. I'm an organized, hard-working quick learner who is always ready to adapt to feedback.
+
+              Please don't hesitate to reach out through my business email: <a href="mailto:sydvcart@gmail.com">sydvcart@gmail.com</a>
+            </p>
+            <div id="ResumeLinks">
+              <a class="icon" target="new" title="Email"  href="mailto:sydvcart@gmail.com"><i class="fa fa-envelope"></i></a>
+              <a class="icon" target="new" title="Resume" href="/Documents/SydneyCarmerResume.pdf"><i class="fa fa-id-card"></i></a>
+            </div>
+          </div>
+        </div>
+      </article>
+    </main>
+    <footer>
+      <a class="icon" title="Back to Top" href="#topofpage"><i class="fa fa-arrow-up"></i></a>
+      <nav aria-label="Social Media">
+        <a class="icon" target="new" title="YouTube"   href="https://www.youtube.com/SydVC"><i class="fa fa-youtube"></i></a>
+        <a class="icon" target="new" title="Instagram" href="https://www.instagram.com/sydvcart/" ><i class="fa fa-instagram"></i></a>
+        <a class="icon" target="new" title="LinkedIn"  href="https://www.linkedin.com/in/sydneycarmer/"><i class="fa fa-linkedin-in"></i></a>
+      </nav>
+    </footer>
+    <script>
+      "use strict";
+      (() => {
+        let onDOMLoaded = ()=>
+        {
+          /* Apply classes to loading images for styling */
+          document.querySelectorAll('picture').forEach((pic)=>
+          {
+            pic.querySelectorAll('img').forEach((img) =>
+            {
+              if(!img.complete)
+              {
+                let doneLoading = ()=>
+                {
+                  pic.classList.remove('loading');
+                  img.removeEventListener('load', doneLoading);
+                  img.removeEventListener('error', doneLoading);
+                };
+                img.addEventListener('load', doneLoading);
+                img.addEventListener('error', doneLoading);
+                pic.classList.add('loading');
+              }
+            });
+          });
+          /* Setup BackToTop button */
+          document.querySelector("a[href='#topofpage']").addEventListener('click', (e) =>
+          {
+            e.preventDefault(); /* Prevents id appending to url, and for some reason necessary on chromium to allow scrolling while other scrolls are happening */
+            document.body.scrollTo(0,0);
+          });
+          /* Close modal if its backdrop is clicked */
+          document.querySelectorAll('dialog').forEach((d)=>d.addEventListener('click', (e)=>
+          {
+            if(e.target instanceof HTMLDialogElement) //Ignore bubbled events
+            {
+              const rect = e.target.getBoundingClientRect();
+              if( rect.top > e.clientY
+              || e.clientY > rect.top + rect.height
+              || rect.left > e.clientX
+              || e.clientX > rect.left + rect.width)
+              {
+                e.target.close();
+              }
+            }
+          }));
+          /* Add modal 'close' listeners */
+          document.querySelectorAll('dialog').forEach((modal)=>modal.addEventListener('close', ()=>
+          {
+            document.activeElement.blur(); //Unfocus
+          }));
+        }
+        if (document.readyState === "loading")
+        {
+          document.addEventListener('DOMContentLoaded',onDOMLoaded, {once:true});
+        }
+        else
+        {
+          onDOMLoaded();
+        }
+      })();
+      function openModal(modal)
+      {
+        modal.showModal(); //Open modal
+      }
+    </script>
+  </body>
+</html>

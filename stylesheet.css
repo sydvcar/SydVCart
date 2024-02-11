@@ -1,0 +1,827 @@
+@font-face
+{
+    font-family: 'Acier BAT Text Solid';
+    unicode-range: U+000-5FF; /* Download only latin glyphs */
+    font-display: swap; /* Use system font until ready */
+    src:local('Acier Text Solid'), /* FullName */
+        local('Acier-TextSolid'), /* PostScriptName */
+        url('/Fonts/acier-text-solid.ttf') format('truetype');
+    ascent-override: 95%; /* Manual adjustment to deal with all-caps font */
+    size-adjust: 135%;
+}
+@font-face
+{
+    font-family: 'Adelle Sans';
+    unicode-range: U+000-5FF; /* Download only latin glyphs */
+    font-display: swap; /* Use system font until ready */
+    src:local('AdelleSansEXT-Regular'), /* FullName + PostScriptName */
+        url('/Fonts/AdelleSansEXT-Regular.ttf') format('truetype');
+}
+/*
+===============
+Generic Styling (Using an anonymous layer to prevent specificity issues)
+===============
+*/
+@layer
+{
+    /* Get rid of any tag specific default css to prevent surprises/differences across browsers */
+    :not(area,datalist,head,link,param,script,style,title)
+    {
+        color:inherit;
+        font-weight: inherit;
+        font-size: 1em;
+
+        max-width:none;
+        max-height: none;
+        padding:0;
+        margin:0;
+        border: none;
+        outline:none;
+        box-sizing: border-box;
+        background-color: transparent;
+
+        display: flex;
+        /* min-width: 0; */
+        flex-direction: column;
+        justify-content: stretch;
+        align-items: stretch;
+    }
+    dialog:not(:where([open],:popover-open))
+    {
+        display: none;
+    }
+}
+/* Anything with an onclick attribute should indicate it (doesn't account for javascript's addEventListener)*/
+*[onclick],
+label,
+form[method="dialog"] button,
+button[popovertarget]
+{
+    cursor:pointer;
+}
+:any-link
+{
+    text-decoration: none;
+}
+p
+{
+    white-space: pre-line; /* Wraps text while preserving newlines (make sure text starts immediately following tag or you may see a leading new line)*/
+    display: block;
+    line-height: 1.4em;
+}
+p > *
+{
+    display: inline;
+}
+p > :any-link
+{
+    color: var(--ColorAccent);
+}
+p > :any-link:where(:hover,:focus)
+{
+    color:var(--ColorHighlight)
+}
+header,h1,h2,h3,h4,h5,h6
+{
+    font-family: var(--FontHeading);
+    text-transform: uppercase;
+    font-weight: 800;
+}
+:where(h1,h2,h3,h4,h5,h6) small
+{
+    font-family: var(--FontBody);
+    text-transform: none;
+    font-weight: 400;
+}
+dialog::backdrop
+{
+    background-color: var(--ColorBackdrop);
+}
+
+/*
+====================
+Global Media styling
+====================
+*/
+picture
+{
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+@keyframes spin
+{
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+picture.loading
+{
+    border: 1px solid currentColor;
+}
+picture.loading::after
+{
+    content:'';
+    animation: spin 2s linear infinite;
+    position: absolute;
+    width: 20%;
+    height: auto;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    border: 4px solid var(--ColorText);
+    border-top: 4px solid var(--ColorHighlight);
+}
+img
+{
+    min-width: 0;
+    min-height: 0;
+    max-width: 100%;
+    max-height: 80vh; /* Want to be able to see any given image entirely on screen (need to account for header and modal sizes) */
+
+    /* Reasonable styles in the case of alt text */
+    font-size: 1rem;
+    text-align: left;
+
+    /* Reasonable styles in the case of broken imgs */
+    position: relative;
+}
+
+/* Pseudo class on img only works if img fails to load */
+img::before
+{
+    content:"";
+    position: absolute;
+    border: 1px solid;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+}
+/* Chrome seems to default to a 2/1 aspect ratio without anything loaded. Uses poster's aspect ratio once loaded. On full load uses video's aspect ratio */
+video
+{
+    /* Video player fills space, while content is centered within. This keeps makes the player size match content size (eg: no black bars)*/
+    align-self: center;
+    /* Make poster cover video size (won't lose video content because of player-centering above)*/
+    object-fit: cover;
+
+    max-height: 80vh; /* Want to be able to see any given video entirely on screen (need to account for header and modal sizes) */
+    max-width: 100%;
+    background: var(--ColorBackdrop);
+}
+video:focus-visible
+{
+    outline:4px dashed var(--ColorHighlight);
+}
+video:fullscreen
+{
+    object-fit: contain !important;
+}
+video.widescreen,
+iframe.widescreen
+{
+    aspect-ratio: 16/9; /* Can't use auto, would take poster aspect-ratio */
+}
+/*
+===========================
+Trimmed FontAwesome Styling
+===========================
+*/
+.fa::before
+{
+    content:'';
+    display: inline-block;
+    width:1em;
+    height: 1em;
+    mask-size: contain;
+    background-color: currentColor;
+    mask-position: 50% 50%;
+    mask-repeat: no-repeat;
+}
+.fa-bars::before
+{
+    mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='16' width='14' viewBox='0 0 448 512'%3E%3C!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--%3E%3Cpath d='M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z'/%3E%3C/svg%3E");
+}
+.fa-xmark::before
+{
+    mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='16' width='12' viewBox='0 0 384 512'%3E%3C!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--%3E%3Cpath d='M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z'/%3E%3C/svg%3E");
+}
+.fa-arrow-up::before
+{
+    mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 448 512'%3E%3C!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--%3E%3Cpath d='M34.9 289.5l-22.2-22.2c-9.4-9.4-9.4-24.6 0-33.9L207 39c9.4-9.4 24.6-9.4 33.9 0l194.3 194.3c9.4 9.4 9.4 24.6 0 33.9L413 289.4c-9.5 9.5-25 9.3-34.3-.4L264 168.6V456c0 13.3-10.7 24-24 24h-32c-13.3 0-24-10.7-24-24V168.6L69.2 289.1c-9.3 9.8-24.8 10-34.3 .4z'/%3E%3C/svg%3E");
+}
+.fa-youtube::before
+{
+    mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='16' width='18' viewBox='0 0 576 512'%3E%3C!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--%3E%3Cpath d='M549.7 124.1c-6.3-23.7-24.8-42.3-48.3-48.6C458.8 64 288 64 288 64S117.2 64 74.6 75.5c-23.5 6.3-42 24.9-48.3 48.6-11.4 42.9-11.4 132.3-11.4 132.3s0 89.4 11.4 132.3c6.3 23.7 24.8 41.5 48.3 47.8C117.2 448 288 448 288 448s170.8 0 213.4-11.5c23.5-6.3 42-24.2 48.3-47.8 11.4-42.9 11.4-132.3 11.4-132.3s0-89.4-11.4-132.3zm-317.5 213.5V175.2l142.7 81.2-142.7 81.2z'/%3E%3C/svg%3E");
+}
+.fa-instagram::before
+{
+    mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='16' width='14' viewBox='0 0 448 512'%3E%3C!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--%3E%3Cpath d='M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z'/%3E%3C/svg%3E");
+}
+.fa-linkedin-in::before
+{
+    mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='16' width='14' viewBox='0 0 448 512'%3E%3C!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--%3E%3Cpath d='M100.3 448H7.4V148.9h92.9zM53.8 108.1C24.1 108.1 0 83.5 0 53.8a53.8 53.8 0 0 1 107.6 0c0 29.7-24.1 54.3-53.8 54.3zM447.9 448h-92.7V302.4c0-34.7-.7-79.2-48.3-79.2-48.3 0-55.7 37.7-55.7 76.7V448h-92.8V148.9h89.1v40.8h1.3c12.4-23.5 42.7-48.3 87.9-48.3 94 0 111.3 61.9 111.3 142.3V448z'/%3E%3C/svg%3E");
+}
+.fa-envelope::before
+{
+    mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='16' width='16' viewBox='0 0 512 512'%3E%3C!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--%3E%3Cpath d='M48 64C21.5 64 0 85.5 0 112c0 15.1 7.1 29.3 19.2 38.4L236.8 313.6c11.4 8.5 27 8.5 38.4 0L492.8 150.4c12.1-9.1 19.2-23.3 19.2-38.4c0-26.5-21.5-48-48-48H48zM0 176V384c0 35.3 28.7 64 64 64H448c35.3 0 64-28.7 64-64V176L294.4 339.2c-22.8 17.1-54 17.1-76.8 0L0 176z'/%3E%3C/svg%3E");
+}
+.fa-id-card::before
+{
+    mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='16' width='18' viewBox='0 0 576 512'%3E%3C!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--%3E%3Cpath d='M528 160V416c0 8.8-7.2 16-16 16H320c0-44.2-35.8-80-80-80H176c-44.2 0-80 35.8-80 80H64c-8.8 0-16-7.2-16-16V160H528zM64 32C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H512c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64zM272 256a64 64 0 1 0 -128 0 64 64 0 1 0 128 0zm104-48c-13.3 0-24 10.7-24 24s10.7 24 24 24h80c13.3 0 24-10.7 24-24s-10.7-24-24-24H376zm0 96c-13.3 0-24 10.7-24 24s10.7 24 24 24h80c13.3 0 24-10.7 24-24s-10.7-24-24-24H376z'/%3E%3C/svg%3E");
+}
+.fa-trophy::before
+{
+    mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='16' width='18' viewBox='0 0 576 512'%3E%3C!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--%3E%3Cpath d='M400 0H176c-26.5 0-48.1 21.8-47.1 48.2c.2 5.3 .4 10.6 .7 15.8H24C10.7 64 0 74.7 0 88c0 92.6 33.5 157 78.5 200.7c44.3 43.1 98.3 64.8 138.1 75.8c23.4 6.5 39.4 26 39.4 45.6c0 20.9-17 37.9-37.9 37.9H192c-17.7 0-32 14.3-32 32s14.3 32 32 32H384c17.7 0 32-14.3 32-32s-14.3-32-32-32H357.9C337 448 320 431 320 410.1c0-19.6 15.9-39.2 39.4-45.6c39.9-11 93.9-32.7 138.2-75.8C542.5 245 576 180.6 576 88c0-13.3-10.7-24-24-24H446.4c.3-5.2 .5-10.4 .7-15.8C448.1 21.8 426.5 0 400 0zM48.9 112h84.4c9.1 90.1 29.2 150.3 51.9 190.6c-24.9-11-50.8-26.5-73.2-48.3c-32-31.1-58-76-63-142.3zM464.1 254.3c-22.4 21.8-48.3 37.3-73.2 48.3c22.7-40.3 42.8-100.5 51.9-190.6h84.4c-5.1 66.3-31.1 111.2-63 142.3z'/%3E%3C/svg%3E");
+}
+/*
+======================
+Site Structure Styling
+======================
+*/
+:root, ::backdrop
+{
+    --ColorMain: #04787A;
+    --ColorAlt: #179D9F;
+    --ColorAccent: #00464A;
+    --ColorHighlight: #FFB574;
+    --ColorText: white;
+    --ColorBackdrop: #00000099;
+    --ColorFeature:#DEF2F5;
+
+    --FontHeading: "Acier BAT Text Solid", sans-serif;
+    --FontBody: "Adelle Sans", sans-serif;
+
+    -webkit-tap-highlight-color: transparent;
+}
+:root
+{
+    background-color: var(--ColorMain);
+    color:var(--ColorText);
+    font-family: var(--FontBody);
+    font-synthesis-weight: none;
+
+    /* Scroll body, not viewport (allows modals to naturally prevent page scroll)*/
+    overflow: clip;
+    height: 100%;
+}
+body
+{
+    flex: 1; /* Take up full space even if content is less, so that footer is always at bottom */
+    overflow: auto; /* Prevents scrolling when fullscreen element is up */
+    scroll-behavior: smooth;
+    will-change: scroll-position; /* Scrolling is common, optimize to avoid repaints */
+    position: relative; /* Allow absolute elements to be positioned on the page, not the viewport */
+}
+main
+{
+    flex:1;
+}
+
+.accolades
+{
+    padding-top:.5lh;
+}
+/* Hide empty elements used only to capture auto-focus */
+.focusAnchor
+{
+    position: absolute;
+    width: 0;
+    height: 0;
+    pointer-events: none;
+}
+.icon
+{
+    font-size: 2em;
+    flex-direction: inherit;
+}
+@keyframes Bob
+{
+    0%, 100%
+    {
+        transform: translateY(0%);
+    }
+    25%
+    {
+        transform: translateY(-5%);
+    }
+    75%
+    {
+        transform: translateY(5%);
+    }
+}
+#Logo
+{
+    gap: .25em;
+    flex-direction: row;
+    align-items: center;
+    align-self: center;
+    line-height: 1.8em;
+    contain: content;
+}
+#Logo > picture
+{
+    width: 1em;
+}
+#Logo > picture > img
+{
+    aspect-ratio: 1;
+}
+#Logo:where(:hover,:focus) > picture
+{
+    animation: Bob 0.8s linear 0s infinite;
+}
+header, footer
+{
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+header
+{
+    text-align: center;
+    background-color: var(--ColorAccent);
+    /* Keep always visible at top of screen */
+    position: sticky;
+    top:0;
+    z-index: 1;
+    font-size: 1.8em;
+    padding: .1em 2.5%;
+    flex-wrap: wrap;
+    gap:0 0.5em;
+}
+header nav
+{
+    line-height: 1.8em;
+    flex: 1;
+}
+header nav a
+{
+    justify-content: center;
+}
+header dialog button
+{
+    text-align: right;
+    align-self: end;
+    margin: 0 1em;
+}
+header nav a:where(:hover,:focus,.active),
+header button:where(:hover,:focus)
+{
+    color:var(--ColorHighlight);
+}
+header dialog:where([open],:popover-open)
+{
+    margin-left:auto;
+    height:100vh;
+    text-align: right;
+    gap:1em;
+    background-color: var(--ColorAccent);
+    box-shadow: -4px 0px 20px 0px black;
+    border-radius: 0.5em 0% 0% 0.5em;
+    padding-top: 1em;
+}
+header dialog:where([open],:popover-open) nav
+{
+    flex:1;
+    gap:0.5em;
+}
+header dialog:where([open],:popover-open) nav a
+{
+    padding: 0 1em;
+}
+header dialog:where([open],:popover-open) nav a:focus-visible
+{
+    text-shadow: none;
+    background: var(--ColorMain);
+}
+@media not (prefers-reduced-motion)
+{
+    @keyframes SlideFromRight
+    {
+        0% { transform: translateX(100%); }
+        100% { transform: translateX(0%); }
+    }
+    header dialog:where([open],:popover-open)
+    {
+        animation: SlideFromRight .2s ease;
+    }
+}
+footer
+{
+    background-color: var(--ColorHighlight);
+    color:var(--ColorAccent);
+    font-size: 1.2em;
+    padding: .8em 2.5%;
+}
+footer nav
+{
+    flex-direction: inherit;
+    gap:10px;
+}
+footer a:where(:hover,:focus)
+{
+    color:var(--ColorMain);
+}
+
+.contentLane
+{
+    gap:3em;
+    padding: 3em 12.5% 6em;
+}
+.contentLane > h1
+{
+    text-align: center;
+    align-items: center;
+    font-size: 5em;
+    line-height: 1em;
+}
+.contentLane:nth-of-type(even)
+{
+    background-color: var(--ColorAlt);
+}
+
+.feature
+{
+    color: var(--ColorFeature);
+}
+.feature h2
+{
+    color:var(--ColorText);
+
+    padding-bottom: .1em;
+    font-size: 2.6em;
+    line-height: 1em;
+}
+.feature h2 small
+{
+    font-size: .5em;
+}
+/*
+======================
+NoScript Alert Styling
+======================
+*/
+noscript dialog
+{
+    background: var(--ColorHighlight);
+    position: static;
+    width: 100%;
+    text-align: center;
+    font-weight: bold;
+    color: black;
+    flex-direction: row;
+    align-items: center;
+}
+noscript dialog p
+{
+    flex: 1;
+}
+noscript dialog button
+{
+    padding: .25em;
+}
+noscript dialog button:where(:hover,:focus)
+{
+    color:var(--ColorText);
+}
+/*
+===============
+Gallery Styling
+===============
+*/
+.gallery
+{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-content: center;
+    gap: 3em;
+}
+.gallery dialog
+{
+    margin:auto; /* Centers Modal */
+    background-color: var(--ColorFeature);
+    max-width: min(1000px, calc(100% - 20em));
+    color: var(--ColorMain);
+    padding:40px;
+    max-height: calc(100% - 4em);
+    gap: 2em;
+}
+.gallery dialog form,
+.gallery dialog noscript
+{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    color: var(--ColorAccent);
+    font-size: 2em;
+}
+.gallery dialog button:where(:hover,:focus)
+{
+    color:var(--ColorHighlight);
+}
+.gallery dialog h1
+{
+    font-size: 2.5em;
+    text-align: center;
+    align-items: center;
+    color: var(--ColorAccent);
+    line-height: 1em;
+}
+.gallery dialog h1 small
+{
+    font-size: .5em;
+}
+.gallery article
+{
+    position:relative;
+    font-size: min(1vw, 1em);
+    overflow: clip;
+    aspect-ratio: 1;
+    contain:content;
+}
+.gallery article > button
+{
+    position: absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+}
+.gallery dialog:not(:where([open],:popover-open))
+{
+    opacity: 0;
+    display: flex;
+    position: absolute;
+    background-color: var(--ColorBackdrop);
+    top: 0;
+    left: 0;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    color: var(--ColorText);
+    flex: 1;
+    bottom: 0;
+    right: 0;
+    max-width: 100%;
+    max-height: 100%;
+    padding:1em;
+    justify-content: center;
+}
+.gallery dialog:where([open],:popover-open)
+{
+    cursor: auto;
+}
+.gallery dialog:not(:where([open],:popover-open)) > :not(h1)
+{
+    display: none !important;
+}
+.gallery dialog:not(:where([open],:popover-open)) h1
+{
+    color:var(--ColorText);
+    font-size: 2.3em;
+    line-height: 1em;
+    gap: 0.25em;
+    padding: 0;
+}
+.gallery dialog:not(:where([open],:popover-open)) h1 small
+{
+    font-size: .5em;
+    line-height: 1em;
+}
+@media not (prefers-reduced-motion)
+{
+    .gallery article picture,
+    .gallery dialog:not(:where([open],:popover-open))
+    {
+        transition-property: opacity, transform;
+        transition-duration: .5s;
+        transition-timing-function: ease;
+    }
+    @keyframes expand
+    {
+        0% { transform: scale(0);}
+        100% {transform: scale(1);}
+    }
+    .gallery dialog:where([open],:popover-open)
+    {
+        animation: expand .2s ease;
+    }
+    @keyframes hide
+    {
+        0%, 100% { opacity: 0;}
+    }
+    .gallery dialog:not(:where(:hover,[open],:popover-open))
+    {
+        animation: hide 1ms; /* Just a way to override the transition temporarily when dialog closes */
+    }
+}
+.gallery article > button:where(:hover,:focus) ~ dialog:not(:where([open],:popover-open))
+{
+    will-change: opacity;
+    opacity: 1;
+}
+.gallery article > button:where(:hover,:focus) + picture,
+.gallery article:has(dialog:where([open],:popover-open)) > button + picture
+{
+    will-change: transform;
+    transform: scale(1.2);
+}
+.gallery article:has( > button:focus-visible)
+{
+    outline:4px dashed var(--ColorHighlight);
+}
+.gallery article > button
+{
+    z-index: 1; /* Need button on top for interaction, but want button first in DOM for CSS subsequent selection */
+}
+.gallery > article > picture,
+.gallery > article > picture img
+{
+    width: 100%;
+    height: 100%;
+}
+/*
+================
+Carousel Styling
+================
+*/
+.carousel
+{
+    justify-content: center;
+}
+.carousel figure
+{
+    position: relative;
+}
+.carousel figure:has(input:focus-visible)
+{
+    outline: 4px dashed var(--ColorHighlight);
+}
+.scrollContainer
+{
+    flex-direction: row;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    will-change: scroll-position;
+    scrollbar-width: none;
+
+    scroll-timeline-name: --ScrollTimelineCarousel;
+    scroll-timeline-axis: x;
+    scroll-timeline-axis: horizontal;
+}
+.scrollContainer::-webkit-scrollbar
+{
+    display: none;
+}
+@keyframes SlidePip
+{
+    from {opacity: 1; transform:translateX(calc(-50% - 1em * (var(--NumImgs) - 1)));}
+    to {opacity: 1; transform:translateX(calc(-50% + 1em * (var(--NumImgs) - 1)));}
+}
+.scrollContainer::after
+{
+    content:'';
+    position: absolute;
+    height: 1em;
+    width: 1em;
+    background-color: var(--ColorHighlight);
+    animation: SlidePip;
+    animation-timing-function: steps(var(--NumImgs), jump-none);
+    --PercentExpand: calc(50% / calc(var(--NumImgs) - 1));
+    animation-range: calc(0% - var(--PercentExpand)) calc(100% + var(--PercentExpand)); /* Center it on the images */
+    animation-timeline: --ScrollTimelineCarousel;
+    animation-duration: 1ms; /* Firefox requires this to apply the animation */
+    bottom: -0.5em;
+    transform: translateX(-50%);
+    border-radius: 50%;
+    z-index:1;
+    left:50%;
+    opacity: 0; /* Hide by default, show with animation, so if timeline isn't supported pip isn't shown */
+    pointer-events: none;
+}
+.scrollContainer > *
+{
+    flex-shrink: 0;
+    width: 100%; /* TODO handle edges sometimes showing */
+    position: relative;
+    container-type: inline-size;
+}
+.scrollContainer label
+{
+    cursor: default;
+}
+.carousel input
+{
+    /* Hide input, put where scroll-snap-align is, currently relying on browser default behavior of scrolling to focus */
+    position: absolute;
+    top:50%;
+    left:50%;
+    width:0;
+    height:0;
+    transform: translateX(-50%);
+    opacity: 0;
+    pointer-events: none;
+    scroll-snap-align: center;
+}
+.carousel picture
+{
+    width: 100%;
+    height: 100%;
+}
+.carousel img
+{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+.jumpPips
+{
+    position: absolute;
+    bottom: -.5em;
+    left: 0;
+    right: 0;
+    flex-direction: row;
+    justify-content: center;
+    gap: 1em;
+}
+.jumpPips > *
+{
+    background-color: var(--ColorMain);
+    border:.15em solid var(--ColorText);
+    border-radius: 50%;
+    width:1em;
+    aspect-ratio: 1;
+    justify-content: center;
+    align-items: center;
+}
+.jumpPips > :where(:hover,:focus)
+{
+    background-color: var(--ColorHighlight);
+}
+/*
+=============================
+Screen Size Dependent Styling
+=============================
+*/
+@media not (width < 950px)
+{
+    header dialog:not(:where([open],:popover-open))
+    {
+        display: contents;
+    }
+    header dialog:not(:where([open],:popover-open)) nav
+    {
+        flex-direction: row;
+    }
+    header > button,
+    header dialog:not(:where([open],:popover-open)) button
+    {
+        display: none;
+    }
+    header dialog:not(:where([open],:popover-open)) nav
+    {
+        justify-content: end;
+        --pad:0.7em;
+    }
+    header dialog:not(:where([open],:popover-open)) nav > a:not(:where(:first-of-type))
+    {
+        border-left: 2px solid var(--ColorMain);
+        padding-left: var(--pad);
+    }
+    header dialog:not(:where([open],:popover-open)) nav > a:not(:where(:last-of-type))
+    {
+        border-right: 2px solid var(--ColorMain);
+        padding-right:var(--pad);
+    }
+    .feature
+    {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap:inherit;
+    }
+    .gallery figure
+    {
+        font-size: min(1vw, 1em);
+    }
+}
+@media (width < 950px)
+{
+    html
+    {
+        font-size: 2vw;
+    }
+    .feature
+    {
+        gap:1em;
+    }
+    .gallery
+    {
+        /* Change to 1 column */
+        grid-template-columns: 1fr;
+    }
+    .gallery dialog:not(:where([open],:popover-open)) h1
+    {
+        font-size: 3em;
+    }
+}

@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>SydVC</title>
+    <meta name="description" content="Portfolio site of Sydney Carmer (SydVC) showcasing illustrative to digital media work"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <link rel="icon" type="image/png" href="/CartoonSelfPortraitIcon.png"/>
+    <link rel="preload" href="/Fonts/acier-text-solid.ttf" as="font" type="font/ttf" crossorigin />
+    <link rel="preload" href="/Fonts/AdelleSansEXT-Regular.ttf" as="font" type="font/ttf" crossorigin />
+    <link rel="stylesheet" href="stylesheet.css"/>
+    <style>
+      header
+      {
+        /* Override common header styling */
+        position: relative;
+        flex-direction: column;
+        background-color: transparent;
+        padding:0;
+        padding-bottom: 80px;
+        padding-top: 50px;
+        margin: 30px 0;
+
+
+        --FilmBarWidth: 10px;
+        --FilmBlockWidth: 800px;
+        border: var(--FilmBarWidth) solid var(--ColorAccent);
+        border-left:none;
+        border-right:none;
+        text-shadow: 9px 8px 15px #000;
+      }
+      header img
+      {
+        filter: drop-shadow(9px 8px 15px #000);
+      }
+      #Logo
+      {
+        font-size: 4em;
+        line-height: 1.8em;
+        padding: 0 20px;
+      }
+      header h1
+      {
+        padding-bottom: 2em;
+        line-height: 1.8em;
+      }
+      header nav
+      {
+        line-height: 1.8em;
+      }
+      /*
+      =================
+      FilmStrip Styling
+      =================
+      */
+      #FilmStrip
+      {
+        overflow: clip;
+        position: absolute;
+        top:0;
+        bottom:0;
+        left:0;
+        right:0;
+        z-index: -1; /* Act as a background */
+        padding: var(--FilmBarWidth) 0;
+      }
+      #FilmStrip > :first-child
+      {
+        height: 100%;
+        width:calc(100% + 4 * var(--FilmBlockWidth));
+        transform: translateX(calc(0% - var(--FilmBlockWidth)));
+
+        background-size: var(--FilmBlockWidth) calc(100% - 6 * var(--FilmBarWidth));
+        justify-content: space-between;
+      }
+      #FilmStrip > :first-child::before,
+      #FilmStrip > :first-child::after
+      {
+        content:"";
+        height:calc(2 * var(--FilmBarWidth));
+        background-size: calc(4 * var(--FilmBarWidth)) 100%;
+      }
+      #FilmStrip > :first-child::before,
+      #FilmStrip > :first-child::after,
+      #FilmStrip > :first-child
+      {
+        background-position: 50% 50%;
+        color: var(--ColorAccent);
+        background-image: linear-gradient(to right, transparent var(--FilmBarWidth), currentColor var(--FilmBarWidth), currentColor calc(100% - var(--FilmBarWidth)), transparent calc(100% - var(--FilmBarWidth)));
+        background-repeat: repeat-x;
+      }
+      @media not (prefers-reduced-motion)
+      {
+        @keyframes FilmStrip
+        {
+          0%
+          {
+            transform: translateX(calc(0% - var(--FilmBlockWidth)));
+          }
+          40%, 100%
+          {
+            transform: translateX(calc(0% - 2 * var(--FilmBlockWidth)));
+          }
+        }
+        #FilmStrip > :first-child
+        {
+          animation: FilmStrip 5s cubic-bezier(0.74, -0.4, 0.37, 1.43);
+          animation-iteration-count: infinite;
+        }
+      }
+
+      /*
+      ============
+      Main Styling
+      ============
+      */
+      .feature h2
+      {
+        font-size:3em;
+        line-height: 1em;
+      }
+      .feature h2 small
+      {
+        color:var(--ColorAccent);
+      }
+      .feature p
+      {
+        font-size:1.8em;
+      }
+      @media not (width < 950px)
+      {
+        /* Alternate display ordering of every other feature */
+        .feature:nth-child(even) > :last-child
+        {
+          order:-1;
+          text-align: right;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="topofpage" tabindex="-1" class="focusAnchor"></div>
+    <header>
+      <div id="FilmStrip"><div></div></div>
+      <h1>
+        <a id="Logo" href="/">
+          <picture>
+            <img decoding="async" alt="" src="/CartoonSelfPortraitIcon.png">
+          </picture>
+          <strong>SydVC</strong>
+        </a>
+        <small>Animator. Illustrator. Video Editor.</small>
+      </h1>
+      <nav aria-label="Site Pages">
+        <a href="/About"><span>About</span></a>
+        <a href="/DigitalMedia"><span>Digital Media</span></a>
+        <a href="/Illustration"><span>Illustration</span></a>
+      </nav>
+    </header>
+    <noscript>
+      <dialog open aria-label="Scripting disabled notice" tabindex="-1">
+        <p>It appears scripting has been disabled or is unavailable. Some behavior may not work as expected</p>
+        <form method="dialog" role="none"><button aria-label="Close"><i class="fa fa-xmark"></i></button></form>
+      </dialog>
+    </noscript>
+    <main class="contentLane" style="gap:calc(100px + 2em) 2em;">
+      <article class="feature" aria-labelledby="LimitedEdition">
+        <div class="carousel" style="--NumImgs:5;">
+          <figure aria-label="Image Carousel">
+            <div tabindex="-1" class="scrollContainer">
+              <label role="tabpanel">
+                <picture>
+                  <img decoding="async" alt="Tarot card deck box" src="/Home/StarCrossedTarotCardDeck/TarotCards1.jpg" style="aspect-ratio: 4771 / 3578;"/>
+                </picture>
+                <input type="radio" name="TC" id="TC1"/>
+              </label>
+              <label role="tabpanel">
+                <picture>
+                  <img decoding="async" alt="Tarot cards in hand" src="/Home/StarCrossedTarotCardDeck/TarotCards2.jpg" style="aspect-ratio: 4847 / 3635;"/>
+                </picture>
+                <input type="radio" name="TC" id="TC2"/>
+              </label>
+              <label role="tabpanel">
+                <picture>
+                  <img decoding="async" alt="Tarot card collage" src="/Home/StarCrossedTarotCardDeck/TarotCards3.jpg" style="aspect-ratio: 4164 / 3123;"/>
+                </picture>
+                <input type="radio" name="TC" id="TC3"/>
+              </label>
+              <label role="tabpanel">
+                <picture>
+                  <img decoding="async" alt="Tarot cards layed out" src="/Home/StarCrossedTarotCardDeck/TarotCards4.jpg" style="aspect-ratio: 4910 / 3273;"/>
+                </picture>
+                <input type="radio" name="TC" id="TC4"/>
+              </label>
+              <label role="tabpanel">
+                <picture>
+                  <img decoding="async" alt="Tarot card backing" src="/Home/StarCrossedTarotCardDeck/TarotCards5.jpg" style="aspect-ratio: 4260 / 3195;"/>
+                </picture>
+                <input type="radio" name="TC" id="TC5"/>
+              </label>
+            </div>
+            <nav role="tablist" aria-label="Carousel Jump To" class="jumpPips">
+              <label for="TC1" role="tab" aria-label="1"></label>
+              <label for="TC2" role="tab" aria-label="2"></label>
+              <label for="TC3" role="tab" aria-label="3"></label>
+              <label for="TC4" role="tab" aria-label="4"></label>
+              <label for="TC5" role="tab" aria-label="5"></label>
+            </nav>
+          </figure>
+        </div>
+        <div>
+          <h2 id="LimitedEdition">
+            <small>Limited Edition</small>
+            <strong>Star-Crossed Tarot Card Deck</strong>
+          </h2>
+          <p>This 78-card tarot deck, complete with a guidebook, is from my 2023 Senior Thesis Project in Illustration. It combines the vintage aesthetics of traditional tarot with the futuristic, playful imagery of space. Available now through <a target="new" href="https://www.instagram.com/sydvcart/">Instagram</a> or <a target="new" href="mailto:sydvcart@gmail.com">email</a>.</p>
+        </div>
+      </article>
+      <article class="feature" aria-labelledby="GalleryShow">
+        <div class="carousel" style="--NumImgs:5;">
+          <figure aria-label="Image Carousel">
+            <div tabindex="-1" class="scrollContainer">
+              <label role="tabpanel">
+                <picture>
+                  <img decoding="async" alt="Desensitized gallery room" src="/Home/Desensitized/DesensitizedGalleryShow1.jpg" style="aspect-ratio: 2048 / 1152;"/>
+                </picture>
+                <input type="radio" name="GS" id="GS1"/>
+              </label>
+              <label role="tabpanel">
+                <picture>
+                  <img decoding="async" alt="Sydney next to her Disconnected exhibit" src="/Home/Desensitized/DesensitizedGalleryShow2.jpg" style="aspect-ratio: 4708 / 3284;"/>
+                </picture>
+                <input type="radio" name="GS" id="GS2"/>
+              </label>
+              <label role="tabpanel">
+                <picture>
+                  <img decoding="async" alt="Desensitized gallery description on the wall" src="/Home/Desensitized/DesensitizedGalleryShow3.jpg" style="aspect-ratio: 2048 / 1152;"/>
+                </picture>
+                <input type="radio" name="GS" id="GS3"/>
+              </label>
+              <label role="tabpanel">
+                <picture>
+                  <img decoding="async" alt="Desensitized gallery full of attendees" src="/Home/Desensitized/DesensitizedGalleryShow4.jpg" style="aspect-ratio: 5898 / 3319;"/>
+                </picture>
+                <input type="radio" name="GS" id="GS4"/>
+              </label>
+              <label role="tabpanel">
+                <picture>
+                  <img decoding="async" alt="Sydney's 3 exhibits, Moirai, Disconnected, and The Sounds of Children Screaming Have Been Removed" src="/Home/Desensitized/DesensitizedGalleryShow5.jpg" style="aspect-ratio: 2048 / 1152;"/>
+                </picture>
+                <input type="radio" name="GS" id="GS5"/>
+              </label>
+            </div>
+            <nav role="tablist" aria-label="Carousel Jump To" class="jumpPips">
+              <label for="GS1" role="tab" aria-label="1"></label>
+              <label for="GS2" role="tab" aria-label="2"></label>
+              <label for="GS3" role="tab" aria-label="3"></label>
+              <label for="GS4" role="tab" aria-label="4"></label>
+              <label for="GS5" role="tab" aria-label="5"></label>
+            </nav>
+          </figure>
+        </div>
+        <div>
+          <h2 id="GalleryShow">
+            <small>My Gallery Show</small>
+            <strong>Desensitized</strong>
+          </h2>
+          <p>In Spring 2023, I curated and had work featured in a group exhibition in UNCC's Rowe Gallery. I proposed and fully organized the show, which confronted the contemporary overexposure to tragedy.</p>
+        </div>
+      </article>
+      <article class="feature" aria-labelledby="ClientWork">
+        <video class="widescreen" controls poster="/Home/KillTheClimbers/KillTheClimbersTrailer-thumbnail.jpg" preload="metadata">
+          <source type="video/mp4" src="/Home/KillTheClimbers/KillTheClimbersTrailer.mp4">
+        </video>
+        <div>
+          <h2 id="ClientWork">
+            <small>Client Work</small>
+            <strong>Kill the Climbers Trailer</strong>
+          </h2>
+          <p>Some of my most recent client work includes working with High Cal Games on a trailer for their upcoming indie arcade game, "Kill the Climbers". <a target="new" href="https://store.steampowered.com/app/2257560/Kill_The_Climbers/">Support them on Steam!</a></p>
+        </div>
+      </article>
+    </main>
+    <footer>
+      <a class="icon" title="Back to Top" href="#topofpage" onclick="document.body.classList.add('scrolling')"><i class="fa fa-arrow-up"></i></a>
+      <nav aria-label="Social Media">
+        <a class="icon" target="new" title="YouTube"   href="https://www.youtube.com/SydVC"><i class="fa fa-youtube"></i></a>
+        <a class="icon" target="new" title="Instagram" href="https://www.instagram.com/sydvcart/" ><i class="fa fa-instagram"></i></a>
+        <a class="icon" target="new" title="LinkedIn"  href="https://www.linkedin.com/in/sydneycarmer/"><i class="fa fa-linkedin-in"></i></a>
+      </nav>
+    </footer>
+    <script>
+      "use strict";
+      (() => {
+        let onDOMLoaded = ()=>
+        {
+          /* Apply classes to loading images for styling */
+          document.querySelectorAll('picture').forEach((pic)=>
+          {
+            pic.querySelectorAll('img').forEach((img) =>
+            {
+              if(!img.complete)
+              {
+                let doneLoading = ()=>
+                {
+                  pic.classList.remove('loading');
+                  img.removeEventListener('load', doneLoading);
+                  img.removeEventListener('error', doneLoading);
+                };
+                img.addEventListener('load', doneLoading);
+                img.addEventListener('error', doneLoading);
+                pic.classList.add('loading');
+              }
+            });
+          });
+          /* Setup BackToTop button */
+          document.querySelector("a[href='#topofpage']").addEventListener('click', (e) =>
+          {
+            e.preventDefault(); /* Prevents id appending to url, and for some reason necessary on chromium to allow scrolling while other scrolls are happening */
+            document.body.scrollTo(0,0);
+          });
+          /* Setup carousel auto-scrolling */
+          window.setInterval(() =>
+          {
+            document.querySelectorAll('.carousel > figure:not(:where(.touching,:hover,:has(:focus))) .scrollContainer').forEach((d)=>
+            {
+              let scrollX = d.scrollLeft+d.clientWidth;
+              if(scrollX > d.scrollWidth-d.clientWidth/2)
+              {
+                scrollX = 0;
+              }
+              d.scrollTo(scrollX, 0);
+            });
+          }, 4000);
+          /* Setup Carousel Scrolling */
+          document.querySelectorAll('.carousel > figure').forEach((d)=>
+          {
+            let scroller = d.querySelector('.scrollContainer');
+            d.querySelectorAll('input').forEach((b, i)=>
+            {
+              b.addEventListener('focus', (e)=>
+              {
+                e.preventDefault(); /* For some reason necessary on chromium to allow scrolling while other scrolls are happening */
+                scroller.scrollTo(d.clientWidth*i,0);
+              });
+            });
+            d.addEventListener('touchstart', (e) =>{d.classList.add('touching');},{passive:true});
+            d.addEventListener('touchend', () =>{d.classList.remove('touching');},{passive:true});
+            d.addEventListener('touchcancel', () =>{d.classList.remove('touching');},{passive:true});
+          });
+        }
+        if (document.readyState === "loading")
+        {
+          document.addEventListener('DOMContentLoaded',onDOMLoaded, {once:true});
+        }
+        else
+        {
+          onDOMLoaded();
+        }
+      })();
+    </script>
+  </body>
+</html>
