@@ -394,7 +394,7 @@ header
     /* Keep always visible at top of screen */
     position: sticky;
     top:0;
-    z-index: 1;
+    z-index: 2;
     font-size: 1.8em;
     padding: .1em 2.5%;
     flex-wrap: wrap;
@@ -786,7 +786,7 @@ Carousel Styling
     top:50%;
     left:50%;
     width:0;
-    height:0;
+    height:0.1px; /*Chrome doesn't seem to apply snap-align correctly without non-zero height */
     transform: translateX(-50%);
     opacity: 0;
     pointer-events: none;
