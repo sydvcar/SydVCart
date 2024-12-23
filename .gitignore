@@ -1,0 +1,11 @@
+# Ignore Media Files due to github size restrictions #
+
+# Image Files #
+*.jpg
+*.png
+
+# Video Files #
+*.mp4
+
+# Document Files #
+*.pdf
