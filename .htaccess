@@ -1,5 +1,5 @@
 # Set index page
-DirectoryIndex Home.html
+DirectoryIndex DigitalMedia.html
 
 RewriteEngine on
 #Force not-www

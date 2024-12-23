@@ -4,10 +4,12 @@
     <meta charset="UTF-8"/>
     <title>SydVC - Digital Media</title>
     <meta name="description" content="My digital media projects"/>
+    <meta name="og:image" content="/URLPreview.jpg"/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <link rel="icon" type="image/png" href="/CartoonSelfPortraitIcon.png"/>
     <link rel="preload" href="/Fonts/acier-text-solid.ttf" as="font" type="font/ttf" crossorigin />
     <link rel="preload" href="/Fonts/AdelleSansEXT-Regular.ttf" as="font" type="font/ttf" crossorigin />
+    <link rel="preload" href="/Fonts/Adelle Sans Bold.otf" as="font" type="font/otf" crossorigin />
     <link rel="stylesheet" href="stylesheet.css"/>
     <noscript><style>.script{display:none}</style></noscript>
   </head>
@@ -28,6 +30,7 @@
           <a href="/About"><span>About</span></a>
           <a href="/DigitalMedia" class="active"><span>Digital Media</span></a>
           <a href="/Illustration"><span>Illustration</span></a>
+          <a href="/ClientWork"><span>Client Work</span></a>
         </nav>
       </dialog>
       <button popovertarget="sidebar" popovertargetaction="show" onclick="openModal(this.parentElement.querySelector('dialog'))" aria-label="Open sidebar nav"><i class="fa fa-bars"></i></button>
@@ -41,31 +44,79 @@
     <main>
       <section class="contentLane" aria-labelledby="Animation">
         <h1 id="Animation">Animation</h1>
-        <article class="feature" aria-labelledby="DemoReel">
+        <article class="feature" aria-labelledby="AnimationDemoReel">
           <video class="widescreen" controls poster="/DigitalMedia/Animation/DemoReel/DemoReel-thumbnail.jpg" preload="metadata">
             <source type="video/mp4" src="/DigitalMedia/Animation/DemoReel/DemoReel.mp4"/>
           </video>
           <div>
-            <h2 id="DemoReel">
+            <h2 id="AnimationDemoReel">
               <strong>Demo Reel</strong>
               <small>After Effects & Premiere Pro - 2022</small>
             </h2>
             <p> 00:00 - SydVC Logo Reveal
-                00:10 - 2021 Project
-                00:12 - House of the Cretan Woman (Rigging & Animation)
-                00:19 - Romantic 4.0 Diner
-                00:26 - House of the Cretan Woman (Rigging & Animation)
-                00:32 - 2021 Project
-                00:42 - Birds of a Feather (War Trailer)
-                00:52 - Madame Zeroni and her Shop of Fortune (Short Film)
-                00:55 - Overgrown Lower Third
-                01:06 - Madame Zeroni and her Shop of Fortune (Short Film)
-                01:10 - Booze & Spirits (Short Film)
-                01:37 - How to Summon a Ghost (Website)
+                00:11 - "Blind Date" short film
+                00:17 - "2020" motion graphic project
+                00:20 - "House of the Cretan Woman" non-profit short film
+                00:25 - "Romantic 4.0 Diner" animated photo composite project
+                00:33 - "Blind Date" short film
+                00:41 - "How to Summon a Ghost" mobile website design
+                00:49 - "2020" motion graphic project
+                01:00 - "Spirit Sitters" logo reveal
+                01:05 - "Wishing Well" mobile video game
+                01:11 - "Graveyard Shift" desktop video game
+                01:16 - "Cattle Battle" desktop video game
+                01:21 - "Blind Date" short film
+                01:26 - SydVC Logo Reveal
+                Music: Ringside by Dyalla
             </p>
           </div>
         </article>
         <div class="gallery">
+          <article aria-labelledby="BlindDate">
+            <button popovertarget="BlindDate" popovertargetaction="show" onclick="openModal(this.parentElement.querySelector('dialog'))" aria-label="Open Modal"></button>
+            <picture>
+              <img decoding="async" alt="" src="/DigitalMedia/Animation/BlindDate/cell.jpg"/>
+            </picture>
+            <dialog id="BlindDate" tabindex="-1" popover>
+              <div tabindex="-1" class="focusAnchor" autofocus></div>
+              <form class="script" method="dialog" role="none"><button aria-label="Close"><i class="fa fa-xmark"></i></button></form>
+              <noscript><button popovertarget="BlindDate" popovertargetaction="hide" aria-label="Close"><i class="fa fa-xmark"></i></button></noscript>
+              <h1>
+                <strong>Blind Date</strong>
+                <small>After Effects, Premiere Pro, & Photoshop - 2024</small>
+              </h1>
+              <video class="widescreen" controls poster="/DigitalMedia/Animation/BlindDate/BlindDate-thumbnail.jpg" preload="metadata">
+                <source type="video/mp4" src="/DigitalMedia/Animation/BlindDate/BlindDate.mp4">
+              </video>
+              <div>
+                <p>This short animated film was made for my Senior Thesis project in Digital Media at UNC Charlotte. I completed everything from writing, concept art, and <a target="new" href="/DigitalMedia/Animation/BlindDate/BlindDateStoryboard.pdf">storyboards</a> to asset creation, rigging, and animation.
+
+                  The story is centered around Medusa and her journey to find a partner. Featuring an assortment of monsters and cryptids at a local speed-dating event, the film explores relatable challenges of relationships—particularly for feminine presenting individuals.
+
+                  I wanted to incorporate a sense of playfulness and humor into this mundane but daunting activity to reduce its intimidating appearance while representing a diverse range of characters.</p>
+                <p class="accolades"><i class="fa fa-trophy"></i>Exhibited in UNCC's 2024 Gold Reel Film Festival.</p>
+              </div>
+            </dialog>
+          </article>
+          <article aria-labelledby="OneNightstand">
+            <button popovertarget="OneNightstand" popovertargetaction="show" onclick="openModal(this.parentElement.querySelector('dialog'))" aria-label="Open Modal"></button>
+            <picture>
+              <img decoding="async" alt="" src="/DigitalMedia/Animation/OneNightstand/cell.jpg"/>
+            </picture>
+            <dialog id="OneNightstand" tabindex="-1" popover>
+              <div tabindex="-1" class="focusAnchor" autofocus></div>
+              <form class="script" method="dialog" role="none"><button aria-label="Close"><i class="fa fa-xmark"></i></button></form>
+              <noscript><button popovertarget="OneNightstand" popovertargetaction="hide" aria-label="Close"><i class="fa fa-xmark"></i></button></noscript>
+              <h1>
+                <strong>One Nightstand</strong>
+                <small>Photoshop & After Effects - 2024</small>
+              </h1>
+              <video class="widescreen" controls poster="/DigitalMedia/Animation/OneNightstand/OneNightstand-thumbnail.jpg" preload="metadata">
+                <source type="video/mp4" src="/DigitalMedia/Animation/OneNightstand/OneNightstand.mp4">
+              </video>
+              <p>One Nightstand continues my investigation of contemporary relationships coupled with technology, and how our devices impact us even at rest. With this project, I aim to create a fundamentally human narrative despite the absence of humans. Instead, the scene is centered around electronic/man-made objects within an intimate bedroom environment and the relationships that they insinuate. Made using public domain/CC0 images in combination with my own photography.</p>
+            </dialog>
+          </article>
           <article aria-labelledby="RomanticDiner">
             <button popovertarget="RomanticDiner" popovertargetaction="show" onclick="openModal(this.parentElement.querySelector('dialog'))" aria-label="Open Modal"></button>
             <picture>
@@ -112,17 +163,17 @@
                   00:28 - Character design, character asset creation, and animation
               </p>
               <picture>
-                <img loading="lazy" decoding="async" alt="Old Sheikh character design" src="/DigitalMedia/Animation/CretanWoman/CretanWomanOldSheikhCharacterSheet.png" style="aspect-ratio: 5100 / 3300;"/>
+                <img loading="lazy" decoding="async" alt="Old Sheikh character design" src="/DigitalMedia/Animation/CretanWoman/CretanWomanOldSheikhCharacterSheet.jpg" style="aspect-ratio: 5100 / 3300;"/>
               </picture>
               <video class="widescreen" autoplay muted loop poster="/DigitalMedia/Animation/CretanWoman/CretanWomanWalkCycle-thumbnail.jpg" tabindex="-1">
                 <source type="video/mp4" src="/DigitalMedia/Animation/CretanWoman/CretanWomanWalkCycle.mp4">
               </video>
-              <div style="display: grid; grid-template-columns: 1fr 1fr; gap:inherit;">
+              <div style="display: grid; grid-template-columns: 1fr 1fr; gap:inherit;justify-items: center;">
                 <picture>
-                  <img loading="lazy" decoding="async" alt="Hagg Mohammed - Day" src="/DigitalMedia/Animation/CretanWoman/CretanWomanHaggMohammedDay.png" style="aspect-ratio: 2040 / 2729;"/>
+                  <img loading="lazy" decoding="async" alt="Hagg Mohammed - Day" src="/DigitalMedia/Animation/CretanWoman/CretanWomanHaggMohammedDay.jpg" style="aspect-ratio: 2040 / 2729;"/>
                 </picture>
                 <picture>
-                  <img loading="lazy" decoding="async" alt="Hagg Mohammed - Night" src="/DigitalMedia/Animation/CretanWoman/CretanWomanHaggMohammedNight.png" style="aspect-ratio: 2040 / 2729;"/>
+                  <img loading="lazy" decoding="async" alt="Hagg Mohammed - Night" src="/DigitalMedia/Animation/CretanWoman/CretanWomanHaggMohammedNight.jpg" style="aspect-ratio: 2040 / 2729;"/>
                 </picture>
               </div>
             </dialog>
@@ -144,44 +195,6 @@
                 <source type="video/mp4" src="/DigitalMedia/Animation/2021/2021Project.mp4">
               </video>
               <p>This project was made for my Digital Foundations studio. It is an overview of my experience during 2021 and aspects of the COVID-19 pandemic, such as the reality of online learning and pop culture trends of the time. Some assets from InnerSloth were used.</p>
-            </dialog>
-          </article>
-          <article aria-labelledby="SpiritSitters">
-            <button popovertarget="SpiritSitters" popovertargetaction="show" onclick="openModal(this.parentElement.querySelector('dialog'))" aria-label="Open Modal"></button>
-            <picture>
-              <img decoding="async" alt="" src="/DigitalMedia/Animation/SpiritSitters/cell.jpg"/>
-            </picture>
-            <dialog id="SpiritSitters" tabindex="-1" popover>
-              <div tabindex="-1" class="focusAnchor" autofocus></div>
-              <form class="script" method="dialog" role="none"><button aria-label="Close"><i class="fa fa-xmark"></i></button></form>
-              <noscript><button popovertarget="SpiritSitters" popovertargetaction="hide" aria-label="Close"><i class="fa fa-xmark"></i></button></noscript>
-              <h1>
-                <strong>Spirit Sitters Logo Reveal</strong>
-                <small>After Effects - 2021</small>
-              </h1>
-              <video class="widescreen" controls poster="/DigitalMedia/Animation/SpiritSitters/SpiritSittersLogoReveal-thumbnail.jpg" preload="metadata">
-                <source type="video/mp4" src="/DigitalMedia/Animation/SpiritSitters/SpiritSittersLogoReveal.mp4">
-              </video>
-              <p>This project was made for my Digital Foundations studio. It is an animated logo reveal for the imaginary company "Spirit Sitters," a ghost babysitting company.</p>
-            </dialog>
-          </article>
-          <article aria-labelledby="OvergrownLowerThird">
-            <button popovertarget="OvergrownLowerThird" popovertargetaction="show" onclick="openModal(this.parentElement.querySelector('dialog'))" aria-label="Open Modal"></button>
-            <picture>
-              <img decoding="async" alt="" src="/DigitalMedia/Animation/OvergrownLowerThird/cell.jpg"/>
-            </picture>
-            <dialog id="OvergrownLowerThird" tabindex="-1" popover>
-              <div tabindex="-1" class="focusAnchor" autofocus></div>
-              <form class="script" method="dialog" role="none"><button aria-label="Close"><i class="fa fa-xmark"></i></button></form>
-              <noscript><button popovertarget="OvergrownLowerThird" popovertargetaction="hide" aria-label="Close"><i class="fa fa-xmark"></i></button></noscript>
-              <h1>
-                <strong>Overgrown Lower Third</strong>
-                <small>After Effects & Premiere Pro - 2021</small>
-              </h1>
-              <video class="widescreen" controls poster="/DigitalMedia/Animation/OvergrownLowerThird/OvergrownLowerThird-thumbnail.jpg" preload="metadata">
-                <source type="video/mp4" src="/DigitalMedia/Animation/OvergrownLowerThird/OvergrownLowerThird.mp4">
-              </video>
-              <p>This project was made for my 4D studio. It is an exercise in text animation themed as a self-portrait.</p>
             </dialog>
           </article>
           <article aria-labelledby="GhostWebsite">
@@ -207,6 +220,31 @@
       </section>
       <section class="contentLane" aria-labelledby="Videography">
         <h1 id="Videography">Videography</h1>
+        <article class="feature" aria-labelledby="VideographyDemoReel">
+          <video class="widescreen" controls poster="/DigitalMedia/Videography/DemoReel/FilmDemoReel-thumbnail.jpg" preload="metadata">
+            <source type="video/mp4" src="/DigitalMedia/Videography/DemoReel/FilmDemoReel.mp4">
+          </video>
+          <div>
+            <h2 id="VideographyDemoReel">
+              <strong>Demo Reel</strong>
+              <small>After Effects & Premiere Pro - 2024</small>
+            </h2>
+            <p>00:00 - SydVC Logo Reveal
+               00:13 - "Madame Zeroni and Her Shop of Fortune" short film
+               00:16 - "Birds of a Feather" war film trailer
+               00:22 - "Booze & Spirits" short film
+               00:37 - "Madame Zeroni and Her Shop of Fortune" short film
+               00:43 - "The Printmaker" documentary
+               00:49 - "Alexis Raeana" studio vlog (client work)
+               00:52 - "Rebekah Todd" Instagram Reels (client work)
+               00:55 - "Man Above Mole Below" mockumentary
+               01:01 - "This Sucks" short film
+               01:07 - "The Printmaker" documentary
+               01:20 - SydVC Logo Reveal
+               Music: Hot Tubes by Abbynoise
+            </p>
+          </div>
+        </article>
         <article class="feature" aria-labelledby="Printmaker">
           <video class="widescreen" controls poster="/DigitalMedia/Videography/ThePrintmaker/PrintmakerDocumentary-thumbnail.jpg" preload="metadata">
             <source type="video/mp4" src="/DigitalMedia/Videography/ThePrintmaker/PrintmakerDocumentary.mp4">
@@ -216,11 +254,38 @@
               <strong>The Printmaker</strong>
               <small>Premiere Pro - 2023</small>
             </h2>
-            <p>This project was made for my Film Production class. It is a documentary on the life and work of Anna Kenar, a printmaker and studio professor at UNC Charlotte. It takes place as she prepares a body of work for her (at the time upcoming) show "Carry this Splendor, this Chaos." Poland Folk Music by Vivek Abhishek was used.</p>
-            <p class="accolades"><i class="fa fa-trophy"></i>Exhibited in UNCC's 2024 Juried Student Art Show.</p>
+            <p>This project was made for my Film Production class. It is a documentary on the life and work of Anna Kenar, a printmaker and studio professor at UNC Charlotte. It takes place as she prepares a body of work for her (at the time upcoming) show "Carry this Splendor, this Chaos."
+               Music: Poland Folk Music by Vivek Abhishek
+            </p>
+            <p class="accolades"><i class="fa fa-trophy"></i>Best Film in UNCC's 2024 Gold Reel Film Festival.</p>
+            <p class="accolades"><i class="fa fa-trophy"></i>Best Documentary in UNCC's 2024 Gold Reel Film Festival.</p>
+            <p class="accolades"><i class="fa fa-trophy"></i>3rd Place in UNCC's 2024 Juried Student Art Show.</p>
           </div>
         </article>
         <div class="gallery">
+          <article aria-labelledby="SelfiePortrait">
+            <button popovertarget="SelfiePortrait" popovertargetaction="show" onclick="openModal(this.parentElement.querySelector('dialog'))" aria-label="Open Modal"></button>
+            <picture>
+              <img decoding="async" alt="" src="/DigitalMedia/Videography/SelfiePortrait/cell.jpg"/>
+            </picture>
+            <dialog id="SelfiePortrait" tabindex="-1" popover>
+              <div tabindex="-1" class="focusAnchor" autofocus></div>
+              <form class="script" method="dialog" role="none"><button aria-label="Close"><i class="fa fa-xmark"></i></button></form>
+              <noscript><button popovertarget="SelfiePortrait" popovertargetaction="hide" aria-label="Close"><i class="fa fa-xmark"></i></button></noscript>
+              <h1>
+                <strong>Selfie Portrait</strong>
+                <small>After Effects & Premiere Pro - 2024</small>
+              </h1>
+              <video class="portrait" controls poster="/DigitalMedia/Videography/SelfiePortrait/SelfiePortrait-thumbnail.jpg" preload="metadata">
+                <source type="video/mp4" src="/DigitalMedia/Videography/SelfiePortrait/SelfiePortrait.mp4">
+              </video>
+              <div>
+                <p>Selfie Portrait examines concepts of identity and digital presentation. With this project, I wanted to investigate the format of short-form video content that has gained rising popularity on social media while simultaneously critiquing that very format and environment. My research is interested in how our relationships become warped based on how we portray ourselves online and the disconnect generated with our offline selves.</p>
+                <p>Model: Isabella Broccolo
+                  Music: Sahara by Hensonn</p>
+              </div>
+            </dialog>
+          </article>
           <article aria-labelledby="BirdsOfAFeather">
             <button popovertarget="BirdsOfAFeather" popovertargetaction="show" onclick="openModal(this.parentElement.querySelector('dialog'))" aria-label="Open Modal"></button>
             <picture>
@@ -325,117 +390,10 @@
               </div>
             </dialog>
           </article>
-          <article aria-labelledby="DichoticDilemma">
-            <button popovertarget="DichoticDilemma" popovertargetaction="show" onclick="openModal(this.parentElement.querySelector('dialog'))" aria-label="Open Modal"></button>
-            <picture>
-              <img decoding="async" alt="" src="/DigitalMedia/Videography/DichoticDilemma/cell.jpg"/>
-            </picture>
-            <dialog id="DichoticDilemma" tabindex="-1" popover>
-              <div tabindex="-1" class="focusAnchor" autofocus></div>
-              <form class="script" method="dialog" role="none"><button aria-label="Close"><i class="fa fa-xmark"></i></button></form>
-              <noscript><button popovertarget="DichoticDilemma" popovertargetaction="hide" aria-label="Close"><i class="fa fa-xmark"></i></button></noscript>
-              <h1>
-                <strong>The Dichotic Dilemma</strong>
-                <small>Premiere Pro - 2022</small>
-              </h1>
-              <video class="widescreen" controls poster="/DigitalMedia/Videography/DichoticDilemma/DichoticDilemma-thumbnail.jpg" preload="metadata">
-                <source type="video/mp4" src="/DigitalMedia/Videography/DichoticDilemma/DichoticDilemma.mp4">
-              </video>
-              <p>This project was made for my Video Art studio. It is an exercise in greenscreen usage, exploring a humorous story of decision-making. Music from Fesliyan Studios was used.</p>
-            </dialog>
-          </article>
         </div>
       </section>
       <section class="contentLane" aria-labelledby="DesignAndPhotography">
         <h1 id="DesignAndPhotography">Design & Photography</h1>
-        <article class="feature" aria-labelledby="EasingForward">
-          <div class="carousel" style="--NumImgs:10;">
-            <figure aria-label="Image Carousel">
-              <div tabindex="-1" class="scrollContainer">
-                <label role="tabpanel">
-                  <picture>
-                    <img decoding="async" alt="Black and white photo of an ireland house in the rain" src="/DigitalMedia/DesignAndPhotography/EasingForward/IrelandPhoto01.jpg" style="aspect-ratio: 2835 / 2127;"/>
-                  </picture>
-                  <input type="radio" name="DP" id="DP1"/>
-                </label>
-                <label role="tabpanel">
-                  <picture>
-                    <img decoding="async" alt="Photo of crowded shopping alley" src="/DigitalMedia/DesignAndPhotography/EasingForward/IrelandPhoto02.jpg" style="aspect-ratio: 2268 / 3175;"/>
-                  </picture>
-                  <input type="radio" name="DP" id="DP2"/>
-                </label>
-                <label role="tabpanel">
-                  <picture>
-                    <img decoding="async" alt="Black and white photo of dilapidated interior roof framing" src="/DigitalMedia/DesignAndPhotography/EasingForward/IrelandPhoto03.jpg" style="aspect-ratio: 2267 / 3024;"/>
-                  </picture>
-                  <input type="radio" name="DP" id="DP3"/>
-                </label>
-                <label role="tabpanel">
-                  <picture>
-                    <img decoding="async" alt="Black and white photo of tipped over bikes on a gravel path near the shore" src="/DigitalMedia/DesignAndPhotography/EasingForward/IrelandPhoto04.jpg" style="aspect-ratio: 4032 / 2268;"/>
-                  </picture>
-                  <input type="radio" name="DP" id="DP4"/>
-                </label>
-                <label role="tabpanel">
-                  <picture>
-                    <img decoding="async" alt="Photo of legs hanging off boulder near the shore" src="/DigitalMedia/DesignAndPhotography/EasingForward/IrelandPhoto05.jpg" style="aspect-ratio: 2267 / 3175;"/>
-                  </picture>
-                  <input type="radio" name="DP" id="DP5"/>
-                </label>
-                <label role="tabpanel">
-                  <picture>
-                    <img decoding="async" alt="Photo of a single up close dandelion" src="/DigitalMedia/DesignAndPhotography/EasingForward/IrelandPhoto06.jpg" style="aspect-ratio: 2267 / 3024;"/>
-                  </picture>
-                  <input type="radio" name="DP" id="DP6"/>
-                </label>
-                <label role="tabpanel">
-                  <picture>
-                    <img decoding="async" alt="Photo of small town with pond and forest on the left side" src="/DigitalMedia/DesignAndPhotography/EasingForward/IrelandPhoto07.jpg" style="aspect-ratio: 4032 / 2268;"/>
-                  </picture>
-                  <input type="radio" name="DP" id="DP7"/>
-                </label>
-                <label role="tabpanel">
-                  <picture>
-                    <img decoding="async" alt="Black and white photo of ship wreckage on the shore with birds in the sky" src="/DigitalMedia/DesignAndPhotography/EasingForward/IrelandPhoto08.jpg" style="aspect-ratio: 2268 / 3175;"/>
-                  </picture>
-                  <input type="radio" name="DP" id="DP8"/>
-                </label>
-                <label role="tabpanel">
-                  <picture>
-                    <img decoding="async" alt="Black and white photo of person in a hood sitting on a bench" src="/DigitalMedia/DesignAndPhotography/EasingForward/IrelandPhoto09.jpg" style="aspect-ratio: 2267 / 3175;"/>
-                  </picture>
-                  <input type="radio" name="DP" id="DP9"/>
-                </label>
-                <label role="tabpanel">
-                  <picture>
-                    <img decoding="async" alt="Low shot photo of gravel path through fence gate with house in background" src="/DigitalMedia/DesignAndPhotography/EasingForward/IrelandPhoto10.jpg" style="aspect-ratio: 4032 / 2268;"/>
-                  </picture>
-                  <input type="radio" name="DP" id="DP10"/>
-                </label>
-              </div>
-              <nav role="tablist" aria-label="Carousel Jump To" class="jumpPips">
-                <label for="DP1" role="tab" aria-label="1"></label>
-                <label for="DP2" role="tab" aria-label="2"></label>
-                <label for="DP3" role="tab" aria-label="3"></label>
-                <label for="DP4" role="tab" aria-label="4"></label>
-                <label for="DP5" role="tab" aria-label="5"></label>
-                <label for="DP6" role="tab" aria-label="6"></label>
-                <label for="DP7" role="tab" aria-label="7"></label>
-                <label for="DP8" role="tab" aria-label="8"></label>
-                <label for="DP9" role="tab" aria-label="9"></label>
-                <label for="DP10" role="tab" aria-label="10"></label>
-              </nav>
-            </figure>
-          </div>
-          <div>
-            <h2 id="EasingForward">
-              <strong>Easing Forward</strong>
-              <small>Smartphone Camera & Lightroom - 2023</small>
-            </h2>
-            <p>This series was made during my time studying abroad in Ireland. The program emphasized contemplation and self-reflection, which I wanted to emphasize through my photography. I aimed to convey a sense of slow but meaningful movement, unhurried but attentive to the surrounding landscape.</p>
-            <p class="accolades"><i class="fa fa-trophy"></i>Featured in UNCC's 2023 Global Studies Exhibition.</p>
-          </div>
-        </article>
         <div class="gallery">
           <article aria-labelledby="Synophones">
             <button popovertarget="Synophones" popovertargetaction="show" onclick="openModal(this.parentElement.querySelector('dialog'))" aria-label="Open Modal"></button>
@@ -452,13 +410,13 @@
               </h1>
               <div style="display:grid; grid-template-columns: 1fr 1fr 1fr; gap:inherit;">
                 <picture>
-                  <img loading="lazy" decoding="async" alt="Illustration of Gramophone expelling rainbow. Tune into all your senses at once" src="/DigitalMedia/DesignAndPhotography/Synophones/Synophone.png" style="aspect-ratio: 2550 / 3300;"/>
+                  <img loading="lazy" decoding="async" alt="Illustration of Gramophone expelling rainbow. Tune into all your senses at once" src="/DigitalMedia/DesignAndPhotography/Synophones/Synophone.jpg" style="aspect-ratio: 2550 / 3300;"/>
                 </picture>
                 <picture>
-                  <img loading="lazy" decoding="async" alt="Illustration of Gramophone expelling ghosts. A haunting melody for the whole family" src="/DigitalMedia/DesignAndPhotography/Synophones/Phantasmophone.png" style="aspect-ratio: 2550 / 3300;"/>
+                  <img loading="lazy" decoding="async" alt="Illustration of Gramophone expelling ghosts. A haunting melody for the whole family" src="/DigitalMedia/DesignAndPhotography/Synophones/Phantasmophone.jpg" style="aspect-ratio: 2550 / 3300;"/>
                 </picture>
                 <picture>
-                  <img loading="lazy" decoding="async" alt="Illustration of Gramophone expelling bubbles. This thing blows but our music doesn't " src="/DigitalMedia/DesignAndPhotography/Synophones/Sudsophone.png" style="aspect-ratio: 2550 / 3300;"/>
+                  <img loading="lazy" decoding="async" alt="Illustration of Gramophone expelling bubbles. This thing blows but our music doesn't " src="/DigitalMedia/DesignAndPhotography/Synophones/Sudsophone.jpg" style="aspect-ratio: 2550 / 3300;"/>
                 </picture>
               </div>
               <p>This project was originally made for my 4D studio but was expanded into a personal series. It is a conceptual poster design for a magical, musical product.</p>
@@ -478,7 +436,7 @@
                 <small>Photoshop - 2021</small>
               </h1>
               <picture>
-                <img loading="lazy" decoding="async" alt="Smoking woman coming out of a CRT TV in a field with a mushroom cloud in the background. Worry free when watching TV" src="/DigitalMedia/DesignAndPhotography/WorryFreeTV/WorryFreeTV.png" style="aspect-ratio: 2400 / 3000;"/>
+                <img loading="lazy" decoding="async" alt="Smoking woman coming out of a CRT TV in a field with a mushroom cloud in the background. Worry free when watching TV" src="/DigitalMedia/DesignAndPhotography/WorryFreeTV/WorryFreeTV.jpg" style="aspect-ratio: 2400 / 3000;"/>
               </picture>
               <p>This project was made for my 4D studio. It is a digital composition that explores the dangers of new technology that constantly demands our attention, juxtaposing more vintage aesthetics. Public domain/CC0 photos were used.</p>
             </dialog>
@@ -497,12 +455,77 @@
                 <small>Photoshop - 2021</small>
               </h1>
               <picture>
-                <img loading="lazy" decoding="async" alt="Sydney facing a mirror that it broken and glitching" src="/DigitalMedia/DesignAndPhotography/BreakingAntiquity/BreakingAntiquity.png" style="aspect-ratio: 2400 / 3000;"/>
+                <img loading="lazy" decoding="async" alt="Sydney facing a mirror that it broken and glitching" src="/DigitalMedia/DesignAndPhotography/BreakingAntiquity/BreakingAntiquity.jpg" style="aspect-ratio: 2400 / 3000;"/>
               </picture>
               <div>
                 <p>This project was made for my 4D studio. It is a digital composition that explores the clashing aesthetics of modernity and antiquity. As technology advances, what traditions do we leave behind? How do we continue to see ourselves in an ever-changing digital world?</p>
                 <p class="accolades"><i class="fa fa-trophy"></i>Published in Nova's 2022 Literary-Arts Magazine at UNCC.</p>
               </div>
+            </dialog>
+          </article>
+        </div>
+      </section>
+      <section class="contentLane" aria-labelledby="GameDesign">
+        <h1 id="GameDesign">Game Design</h1>
+        <div class="gallery">
+          <article aria-labelledby="CattleBattle">
+            <button popovertarget="CattleBattle" popovertargetaction="show" onclick="openModal(this.parentElement.querySelector('dialog'))" aria-label="Open Modal"></button>
+            <picture>
+              <img decoding="async" alt="" src="/DigitalMedia/GameDesign/CattleBattle/cell.jpg"/>
+            </picture>
+            <dialog id="CattleBattle" tabindex="-1" popover>
+              <div tabindex="-1" class="focusAnchor" autofocus></div>
+              <form class="script" method="dialog" role="none"><button aria-label="Close"><i class="fa fa-xmark"></i></button></form>
+              <noscript><button popovertarget="CattleBattle" popovertargetaction="hide" aria-label="Close"><i class="fa fa-xmark"></i></button></noscript>
+              <h1>
+                <strong>Cattle Battle</strong>
+                <small>GameMaker & Photoshop - 2024</small>
+              </h1>
+              <video class="widescreen" controls poster="/DigitalMedia/GameDesign/CattleBattle/CattleBattle-thumbnail.jpg" preload="metadata">
+                <source type="video/mp4" src="/DigitalMedia/GameDesign/CattleBattle/CattleBattle.mp4">
+              </video>
+              <p>This project was made in collaboration with Grace Bishop for my Game Design studio. Inspired by early 2000s co-op flash games such as Fireboy and Watergirl, we wanted to explore a playful multiplayer PC experience.
+
+                 Play as the alien to abduct cows, or play as the farmer to defend them! Music by Elvis Herod was used. Co-coded with Chelsea Brtis.
+              </p>
+            </dialog>
+          </article>
+          <article aria-labelledby="GraveyardShift">
+            <button popovertarget="GraveyardShift" popovertargetaction="show" onclick="openModal(this.parentElement.querySelector('dialog'))" aria-label="Open Modal"></button>
+            <picture>
+              <img decoding="async" alt="" src="/DigitalMedia/GameDesign/GraveyardShift/cell.jpg"/>
+            </picture>
+            <dialog id="GraveyardShift" tabindex="-1" popover>
+              <div tabindex="-1" class="focusAnchor" autofocus></div>
+              <form class="script" method="dialog" role="none"><button aria-label="Close"><i class="fa fa-xmark"></i></button></form>
+              <noscript><button popovertarget="GraveyardShift" popovertargetaction="hide" aria-label="Close"><i class="fa fa-xmark"></i></button></noscript>
+              <h1>
+                <strong>Graveyard Shift</strong>
+                <small>GameMaker & Photoshop - 2024</small>
+              </h1>
+              <video class="widescreen" controls poster="/DigitalMedia/GameDesign/GraveyardShift/GraveyardShift-thumbnail.jpg" preload="metadata">
+                <source type="video/mp4" src="/DigitalMedia/GameDesign/GraveyardShift/GraveyardShift.mp4">
+              </video>
+              <p>This was a proof-of-visuals game concept from my Game Design studio. It familiarized me with coding in Game Maker and animating character walk cycles.</p>
+            </dialog>
+          </article>
+          <article aria-labelledby="WishingWell">
+            <button popovertarget="WishingWell" popovertargetaction="show" onclick="openModal(this.parentElement.querySelector('dialog'))" aria-label="Open Modal"></button>
+            <picture>
+              <img decoding="async" alt="" src="/DigitalMedia/GameDesign/WishingWell/cell.jpg"/>
+            </picture>
+            <dialog id="WishingWell" tabindex="-1" popover>
+              <div tabindex="-1" class="focusAnchor" autofocus></div>
+              <form class="script" method="dialog" role="none"><button aria-label="Close"><i class="fa fa-xmark"></i></button></form>
+              <noscript><button popovertarget="WishingWell" popovertargetaction="hide" aria-label="Close"><i class="fa fa-xmark"></i></button></noscript>
+              <h1>
+                <strong>Wishing Well</strong>
+                <small>GameMaker & Photoshop - 2024</small>
+              </h1>
+              <video class="widescreen" controls poster="/DigitalMedia/GameDesign/WishingWell/WishingWell-thumbnail.jpg" preload="metadata">
+                <source type="video/mp4" src="/DigitalMedia/GameDesign/WishingWell/WishingWell.mp4">
+              </video>
+              <p>This project was designed as a short interactive mobile experience for my Game Design Studio. It is a "minigame" that explores ideas of balancing self-care and care for others. The more coins you collect, the slower your bucket moves. Collect only a few coins to move quicker, but grant less wishes.</p>
             </dialog>
           </article>
         </div>

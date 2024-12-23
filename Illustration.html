@@ -4,10 +4,12 @@
     <meta charset="UTF-8"/>
     <title>SydVC - Illustration</title>
     <meta name="description" content="My illustration projects"/>
+    <meta name="og:image" content="/URLPreview.jpg"/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <link rel="icon" type="image/png" href="/CartoonSelfPortraitIcon.png"/>
     <link rel="preload" href="/Fonts/acier-text-solid.ttf" as="font" type="font/ttf" crossorigin />
     <link rel="preload" href="/Fonts/AdelleSansEXT-Regular.ttf" as="font" type="font/ttf" crossorigin />
+    <link rel="preload" href="/Fonts/Adelle Sans Bold.otf" as="font" type="font/otf" crossorigin />
     <link rel="stylesheet" href="stylesheet.css"/>
     <noscript><style>.script{display:none}</style></noscript>
   </head>
@@ -28,6 +30,7 @@
           <a href="/About"><span>About</span></a>
           <a href="/DigitalMedia"><span>Digital Media</span></a>
           <a href="/Illustration" class="active"><span>Illustration</span></a>
+          <a href="/ClientWork"><span>Client Work</span></a>
         </nav>
       </dialog>
       <button popovertarget="sidebar" popovertargetaction="show" onclick="openModal(this.parentElement.querySelector('dialog'))" aria-label="Open sidebar nav"><i class="fa fa-bars"></i></button>
@@ -41,6 +44,65 @@
     <main>
       <section class="contentLane" aria-labelledby="ConceptArt">
         <h1 id="ConceptArt">Concept Art</h1>
+        <article class="feature" aria-labelledby="TarotCards">
+          <div class="carousel" style="--NumImgs:5;">
+            <figure aria-label="Image Carousel">
+              <div tabindex="-1" class="scrollContainer">
+                <label role="tabpanel">
+                  <picture>
+                    <img decoding="async" alt="Tarot card deck box" src="/Home/StarCrossedTarotCardDeck/TarotCards1.jpg" style="aspect-ratio: 4771 / 3578;"/>
+                  </picture>
+                  <input type="radio" name="TC" id="TC1"/>
+                </label>
+                <label role="tabpanel">
+                  <picture>
+                    <img decoding="async" alt="Tarot cards in hand" src="/Home/StarCrossedTarotCardDeck/TarotCards2.jpg" style="aspect-ratio: 4847 / 3635;"/>
+                  </picture>
+                  <input type="radio" name="TC" id="TC2"/>
+                </label>
+                <label role="tabpanel">
+                  <picture>
+                    <img decoding="async" alt="Tarot card collage" src="/Home/StarCrossedTarotCardDeck/TarotCards3.jpg" style="aspect-ratio: 4164 / 3123;"/>
+                  </picture>
+                  <input type="radio" name="TC" id="TC3"/>
+                </label>
+                <label role="tabpanel">
+                  <picture>
+                    <img decoding="async" alt="Tarot cards laid out" src="/Home/StarCrossedTarotCardDeck/TarotCards4.jpg" style="aspect-ratio: 4910 / 3273;"/>
+                  </picture>
+                  <input type="radio" name="TC" id="TC4"/>
+                </label>
+                <label role="tabpanel">
+                  <picture>
+                    <img decoding="async" alt="Tarot card backing" src="/Home/StarCrossedTarotCardDeck/TarotCards5.jpg" style="aspect-ratio: 4260 / 3195;"/>
+                  </picture>
+                  <input type="radio" name="TC" id="TC5"/>
+                </label>
+              </div>
+              <nav role="tablist" aria-label="Carousel Jump To" class="jumpPips">
+                <label for="TC1" role="tab" aria-label="1"></label>
+                <label for="TC2" role="tab" aria-label="2"></label>
+                <label for="TC3" role="tab" aria-label="3"></label>
+                <label for="TC4" role="tab" aria-label="4"></label>
+                <label for="TC5" role="tab" aria-label="5"></label>
+              </nav>
+            </figure>
+          </div>
+          <div>
+            <h2 id="TarotCards">
+              <strong>Star-Crossed Tarot Card Deck</strong>
+              <small>Photoshop & Print Media - 2023</small>
+            </h2>
+            <p>This 78-card tarot deck, complete with a guidebook and tuckbox, was made for my 2023 Senior Thesis project in Illustration at UNC Charlotte. The entire deck was created over the course of just a few months.
+
+              It juxtaposes the vintage aesthetics of traditional tarot with futuristic imagery of space, while simultaneously demonstrating the similarities between the two. In a world where spirituality and science are assumed to be at constant odds, both concepts nonetheless share elements of curiosity and exploration, having both faced historic demonization.
+
+              It was my goal to make tarot fun and approachable for a contemporary audience via stylization, humor, and references to pop culture. I incorporated my personal interests in all things spooky and extraterrestrial while maintaining a sense of playfulness.
+
+              <b>Official copies are available for purchase via <a target="new" href="https://www.instagram.com/sydvcart/">Instagram</a> or <a target="new" href="mailto:sydvcart@gmail.com">email</a>.</b>
+            </p>
+          </div>
+        </article>
         <div class="gallery">
           <article aria-labelledby="WitchCharacterCottageInterior">
             <button popovertarget="WitchCharacterCottageInterior" popovertargetaction="show" onclick="openModal(this.parentElement.querySelector('dialog'))" aria-label="Open Modal"></button>
@@ -81,7 +143,7 @@
                 <small>Photoshop - 2023</small>
               </h1>
               <picture>
-                <img decoding="async" alt="Morgan le Fay character design sheet" src="/Illustration/ConceptArt/CamelotCostume/CamelotCostume.png" style="aspect-ratio: 5100 / 3300;"/>
+                <img decoding="async" alt="Morgan le Fay character design sheet" src="/Illustration/ConceptArt/CamelotCostume/CamelotCostume.jpg" style="aspect-ratio: 5100 / 3300;"/>
               </picture>
               <p>This project was made for my Character Design studio. Inspired by the stories of Camelot, I redesigned the character Morgan le Fay to fit a carnival/circus theme. Emphasis is placed on her clothing and prop design. To achieve this new theme, I imagined her taking on the role of a fortune teller.</p>
             </dialog>
@@ -102,7 +164,7 @@
               <picture>
                 <img decoding="async" alt="The Wonderful Circus of Oz character line up" src="/Illustration/ConceptArt/TheWonderfulCircusOfOz/OzLineup.jpg" style="aspect-ratio: 10800 / 6300;"/>
               </picture>
-              <div style="display: grid; grid-template-columns: 1fr 1fr; gap:inherit;">
+              <div style="display: grid; grid-template-columns: 1fr 1fr; gap:inherit; justify-items: center;">
                 <picture>
                   <img decoding="async" alt="Dorothy as an acrobat/tightrope walker" src="/Illustration/ConceptArt/TheWonderfulCircusOfOz/OzLineupDorothy.jpg" style="aspect-ratio: 2700 / 3600;"/>
                 </picture>
@@ -135,7 +197,7 @@
               <picture>
                 <img decoding="async" alt="Willow tree at night under a crescent moon" src="/Illustration/ConceptArt/FantasyEnvironmentAssets/WillowTreeScene.jpg" style="aspect-ratio: 4601 / 2733;"/>
               </picture>
-              <div style="display: grid; grid-template-columns: 1fr 1fr; gap:inherit;">
+              <div style="display: grid; grid-template-columns: 1fr 1fr; gap:inherit; justify-items: center;">
                 <picture>
                   <img decoding="async" alt="Willow tree" src="/Illustration/ConceptArt/FantasyEnvironmentAssets/WillowTree.jpg" style="aspect-ratio: 2474 / 2000;"/>
                 </picture>
@@ -165,7 +227,7 @@
               <picture>
                 <img decoding="async" alt="The Haunted Hedge board game with pieces placed mid game" src="/Illustration/ConceptArt/TheHauntedHedgeBoardGame/HauntedHedgePrototype2.jpg" style="aspect-ratio: 3530 / 2032;"/>
               </picture>
-              <div style="display: grid; grid-template-columns: 1fr 1fr; gap:inherit;">
+              <div style="display: grid; grid-template-columns: 1fr 1fr; gap:inherit; justify-items: center;">
                 <div style="gap:inherit;">
                   <picture>
                     <img decoding="async" alt="The Haunted Hedge board game box's top half" src="/Illustration/ConceptArt/TheHauntedHedgeBoardGame/HauntedHedgeBoxCover.jpg" style="aspect-ratio: 6900 / 3900;"/>
@@ -178,10 +240,10 @@
                   <img decoding="async" alt="Top down view of The Haunted Hedge game board"src="/Illustration/ConceptArt/TheHauntedHedgeBoardGame/HauntedHedgeBoardGame.jpg" style="aspect-ratio: 6000 / 6000;"/>
                 </picture>
                 <picture>
-                  <img decoding="async" alt="The Haunted Hedge board game character designs" src="/Illustration/ConceptArt/TheHauntedHedgeBoardGame/HauntedHedgeCharacters.png" style="aspect-ratio: 2100 / 1800;"/>
+                  <img decoding="async" alt="The Haunted Hedge board game character designs" src="/Illustration/ConceptArt/TheHauntedHedgeBoardGame/HauntedHedgeCharacters.jpg" style="aspect-ratio: 2100 / 1800;"/>
                 </picture>
                 <picture>
-                  <img decoding="async" alt="The Haunted Hedge board game token designs" src="/Illustration/ConceptArt/TheHauntedHedgeBoardGame/HauntedHedgeItemTokens.png" style="aspect-ratio: 1200 / 1200;"/>
+                  <img decoding="async" alt="The Haunted Hedge board game token designs" src="/Illustration/ConceptArt/TheHauntedHedgeBoardGame/HauntedHedgeItemTokens.jpg" style="aspect-ratio: 1200 / 1200;"/>
                 </picture>
               </div>
               <p>This project was made for my Children's Media studio. It is a board game in which you and your family have gotten lost in a hedge maze and need to find your way out before getting caught by the ghosts that roam the land at night. The game design process included character, board, piece, packaging, and rule design.</p>
@@ -203,7 +265,7 @@
               <picture>
                 <img decoding="async" alt="Top down view of the Candy Curfew game board" src="/Illustration/ConceptArt/CandyCurfewBoardGame/CandyCurfewBoard.jpg" style="aspect-ratio: 6000 / 4500;"/>
               </picture>
-              <div style="display: grid; grid-template-columns: 1fr 1fr; gap:inherit;">
+              <div style="display: grid; grid-template-columns: 1fr 1fr; gap:inherit; justify-items: center;">
                 <picture>
                   <img decoding="async" alt="Candy Curfew board game contents arranged for display" src="/Illustration/ConceptArt/CandyCurfewBoardGame/CandyCurfewMarketing2.jpg" style="aspect-ratio: 2935 / 2201;"/>
                 </picture>
@@ -236,7 +298,7 @@
                   <img decoding="async" alt="Blue Candy Curfew board game card - Rich house. Take 5 pieces of candy" src="/Illustration/ConceptArt/CandyCurfewBoardGame/CandyCurfewCard6.jpg" style="aspect-ratio: 1500 / 2100;"/>
                 </picture>
               </div>
-              <div style="display: grid; grid-template-columns: 1fr 1fr; gap:inherit;">
+              <div style="display: grid; grid-template-columns: 1fr 1fr; gap:inherit; justify-items: center;">
                 <picture>
                   <img decoding="async" alt="Candy Curfew board game character designs" src="/Illustration/ConceptArt/CandyCurfewBoardGame/CandyCurfewPlayers.jpg" style="aspect-ratio: 2925 / 2400;"/>
                 </picture>
@@ -271,20 +333,20 @@
                 <small>Photoshop & Mixed Media - 2022</small>
               </h1>
               <picture>
-                <img decoding="async" alt="'Whats in the Dark? Written & Illustrated by Sydney Carmer' A girl in pigtails holds up a flashlight, with ghosts in the darkness" src="/Illustration/NarrativeArt/WhatsInTheDark/BoardBookCover.png" style="aspect-ratio: 3300 / 3300;"/>
+                <img decoding="async" alt="'Whats in the Dark? Written & Illustrated by Sydney Carmer' A girl in pigtails holds up a flashlight, with ghosts in the darkness" src="/Illustration/NarrativeArt/WhatsInTheDark/BoardBookCover.jpg" style="aspect-ratio: 3300 / 3300;"/>
               </picture>
               <div style="display:grid; grid-template-columns: 1fr 1fr; gap:inherit;">
                 <picture>
-                  <img decoding="async" alt="'Is there a monster under the bed?' A scared girl peeks over the side of the bed at a pair of monster hands emerging from beneath the bed" src="/Illustration/NarrativeArt/WhatsInTheDark/BoardBookPage1.png" style="aspect-ratio: 3300 / 3300;"/>
+                  <img decoding="async" alt="'Is there a monster under the bed?' A scared girl peeks over the side of the bed at a pair of monster hands emerging from beneath the bed" src="/Illustration/NarrativeArt/WhatsInTheDark/BoardBookPage1.jpg" style="aspect-ratio: 3300 / 3300;"/>
                 </picture>
                 <picture>
-                  <img decoding="async" alt="'Is there a skeleton inside my closet?' A scared girl looks at a boney leg sticking out between the closet doors" src="/Illustration/NarrativeArt/WhatsInTheDark/BoardBookPage2.png" style="aspect-ratio: 3300 / 3300;"/>
+                  <img decoding="async" alt="'Is there a skeleton inside my closet?' A scared girl looks at a boney leg sticking out between the closet doors" src="/Illustration/NarrativeArt/WhatsInTheDark/BoardBookPage2.jpg" style="aspect-ratio: 3300 / 3300;"/>
                 </picture>
                 <picture>
-                  <img decoding="async" alt="'Is there a ghost locked in the tox box?' A scared girl looks at a toy chest with spirits emerging from it" src="/Illustration/NarrativeArt/WhatsInTheDark/BoardBookPage3.png" style="aspect-ratio: 3300 / 3300;"/>
+                  <img decoding="async" alt="'Is there a ghost locked in the tox box?' A scared girl looks at a toy chest with spirits emerging from it" src="/Illustration/NarrativeArt/WhatsInTheDark/BoardBookPage3.jpg" style="aspect-ratio: 3300 / 3300;"/>
                 </picture>
                 <picture>
-                  <img decoding="async" alt="'Is there a beast out my window I see?' A scared girl looks out a window at a monstrous silhouette" src="/Illustration/NarrativeArt/WhatsInTheDark/BoardBookPage4.png" style="aspect-ratio: 3300 / 3300;"/>
+                  <img decoding="async" alt="'Is there a beast out my window I see?' A scared girl looks out a window at a monstrous silhouette" src="/Illustration/NarrativeArt/WhatsInTheDark/BoardBookPage4.jpg" style="aspect-ratio: 3300 / 3300;"/>
                 </picture>
               </div>
               <video class="widescreen" controls poster="/Illustration/NarrativeArt/WhatsInTheDark/BoardBookDemoVideo-thumbnail.jpg" preload="metadata">
@@ -308,28 +370,28 @@
               </h1>
               <div style="display:grid;grid-template-columns: 1fr 1fr; gap:inherit;">
                 <picture>
-                  <img decoding="async" alt="'Stretch for the Stars Written & Illustrated by Sydney Carmer' A giraffe's head extends far into space wearing an space helmet" src="/Illustration/NarrativeArt/StretchForTheStars/GiraffeBookCover.png" style="aspect-ratio: 3300 / 5100;"/>
+                  <img decoding="async" alt="'Stretch for the Stars Written & Illustrated by Sydney Carmer' A giraffe's head extends far into space wearing an space helmet" src="/Illustration/NarrativeArt/StretchForTheStars/GiraffeBookCover.jpg" style="aspect-ratio: 3300 / 5100;"/>
                 </picture>
                 <picture style="transform: rotate(180deg);">
-                  <img decoding="async" alt="'Juno the Giraffe want to be an astronaut! They have always lived on the ground but now they're ready to shoot for the moon! Watch Juno as they stretch up, up, up to the stars and reach their dream! And see all the cool things in the sky that they pass along the way!'" src="/Illustration/NarrativeArt/StretchForTheStars/GiraffeBookCover.png" style="aspect-ratio: 3300 / 5100;"/>
+                  <img decoding="async" alt="'Juno the Giraffe want to be an astronaut! They have always lived on the ground but now they're ready to shoot for the moon! Watch Juno as they stretch up, up, up to the stars and reach their dream! And see all the cool things in the sky that they pass along the way!'" src="/Illustration/NarrativeArt/StretchForTheStars/GiraffeBookCover.jpg" style="aspect-ratio: 3300 / 5100;"/>
                 </picture>
                 <picture>
-                  <img decoding="async" alt="'On their trip they pass a kite'" src="/Illustration/NarrativeArt/StretchForTheStars/GiraffeBookPg1.png" style="aspect-ratio: 3300 / 5100;"/>
+                  <img decoding="async" alt="'On their trip they pass a kite'" src="/Illustration/NarrativeArt/StretchForTheStars/GiraffeBookPg1.jpg" style="aspect-ratio: 3300 / 5100;"/>
                 </picture>
                 <picture>
-                  <img decoding="async" alt="'And then they see a plane in flight'" src="/Illustration/NarrativeArt/StretchForTheStars/GiraffeBookPg2.png" style="aspect-ratio: 3300 / 5100;"/>
+                  <img decoding="async" alt="'And then they see a plane in flight'" src="/Illustration/NarrativeArt/StretchForTheStars/GiraffeBookPg2.jpg" style="aspect-ratio: 3300 / 5100;"/>
                 </picture>
                 <picture>
-                  <img decoding="async" alt="'I can't believe a bird's this hight!'" src="/Illustration/NarrativeArt/StretchForTheStars/GiraffeBookPg3.png" style="aspect-ratio: 3300 / 5100;"/>
+                  <img decoding="async" alt="'I can't believe a bird's this hight!'" src="/Illustration/NarrativeArt/StretchForTheStars/GiraffeBookPg3.jpg" style="aspect-ratio: 3300 / 5100;"/>
                 </picture>
                 <picture>
-                  <img decoding="async" alt="'They stretch and stretch into the sky'" src="/Illustration/NarrativeArt/StretchForTheStars/GiraffeBookPg4.png" style="aspect-ratio: 3300 / 5100;"/>
+                  <img decoding="async" alt="'They stretch and stretch into the sky'" src="/Illustration/NarrativeArt/StretchForTheStars/GiraffeBookPg4.jpg" style="aspect-ratio: 3300 / 5100;"/>
                 </picture>
                 <picture>
-                  <img decoding="async" alt="'Juno the Giraffe stretching plush. 2.5 feet tall. Pull and push to extend and retract accordion-style neck. Plush exterior, combination plush stuffing & soft-plastic interior material. Durable! Machine washable! No small parts!'" src="/Illustration/NarrativeArt/StretchForTheStars/GiraffeMerchProposal1.png" style="aspect-ratio: 3300 / 5100;"/>
+                  <img decoding="async" alt="'Juno the Giraffe stretching plush. 2.5 feet tall. Pull and push to extend and retract accordion-style neck. Plush exterior, combination plush stuffing & soft-plastic interior material. Durable! Machine washable! No small parts!'" src="/Illustration/NarrativeArt/StretchForTheStars/GiraffeMerchProposal1.jpg" style="aspect-ratio: 3300 / 5100;"/>
                 </picture>
                 <picture>
-                  <img decoding="async" alt="'Space helmet & Telescope set. Replica giraffe space helmet with built in microphone! The button on the side includes speaker with some of Juno's best quotes! Plastic compact tubing, thick plastic lens, and flexible rubber accessory components. Durable, portable, and safe to use. Encourage your kids to stretch for the stars!'" src="/Illustration/NarrativeArt/StretchForTheStars/GiraffeMerchProposal2.png" style="aspect-ratio: 3300 / 5100;"/>
+                  <img decoding="async" alt="'Space helmet & Telescope set. Replica giraffe space helmet with built in microphone! The button on the side includes speaker with some of Juno's best quotes! Plastic compact tubing, thick plastic lens, and flexible rubber accessory components. Durable, portable, and safe to use. Encourage your kids to stretch for the stars!'" src="/Illustration/NarrativeArt/StretchForTheStars/GiraffeMerchProposal2.jpg" style="aspect-ratio: 3300 / 5100;"/>
                 </picture>
               </div>
               <p>This project was made for my Children's Media studio. It involves a wrap-around cover design, four inner spreads, and accompanying merchandise proposals. Targeted at young readers, I utilized an unorthodox vertical composition for the book to emphasize the character's journey as a giraffe.</p>
@@ -349,10 +411,10 @@
                 <small>Photoshop - 2022</small>
               </h1>
               <picture>
-                <img decoding="async" alt="'Goth Pigeon has a Crush written & illustrated by Sydney Carmer. Goth Pigeon has a crush on Dove Girl but does she like him back? Join Oliver as he tries to come up with the best way to ask Cameron on a date! This story is about befriending people who look different than you and building the courage to overcome your social anxiety. Relationships can be challenging, but they don't have to be scary! Don't be afraid to tell people how you feel.'" src="/Illustration/NarrativeArt/GothPigeonHasACrush/GothPigeonCover.png" style="aspect-ratio: 5100 / 3300;"/>
+                <img decoding="async" alt="'Goth Pigeon has a Crush written & illustrated by Sydney Carmer. Goth Pigeon has a crush on Dove Girl but does she like him back? Join Oliver as he tries to come up with the best way to ask Cameron on a date! This story is about befriending people who look different than you and building the courage to overcome your social anxiety. Relationships can be challenging, but they don't have to be scary! Don't be afraid to tell people how you feel.'" src="/Illustration/NarrativeArt/GothPigeonHasACrush/GothPigeonCover.jpg" style="aspect-ratio: 5100 / 3300;"/>
               </picture>
               <picture>
-                <img decoding="async" alt="'Maybe he'll show his love in a poem or craft her a necklace of bread. Maybe they'll chill and nest in his tree or share a worm dinner instead'" src="/Illustration/NarrativeArt/GothPigeonHasACrush/GothPigeonInnerSpread.png" style="aspect-ratio: 5100 / 3300;"/>
+                <img decoding="async" alt="'Maybe he'll show his love in a poem or craft her a necklace of bread. Maybe they'll chill and nest in his tree or share a worm dinner instead'" src="/Illustration/NarrativeArt/GothPigeonHasACrush/GothPigeonInnerSpread.jpg" style="aspect-ratio: 5100 / 3300;"/>
               </picture>
               <p>This project was made for my Children's Media studio. It includes a wrap-around cover design and a single inner spread. The story follows two birds who seemingly have very different personalities but like each other nonetheless, teaching kids to be true to their feelings and to accept other people.</p>
             </dialog>
@@ -392,7 +454,7 @@
               <picture>
                 <img decoding="async" alt="'Familiar Follies by Sydney Carmer' A witch girl and her cat with a monstrous silhouette emerging from a bubbling caldron behind them" src="/Illustration/NarrativeArt/FamiliarFollies/FamiliarFolliesCover.jpg" style="aspect-ratio: 2550 / 3300;"/>
               </picture>
-              <div style="display: grid; grid-template-columns: 1fr 1fr; gap:inherit;">
+              <div style="display: grid; grid-template-columns: 1fr 1fr; gap:inherit; justify-items: center;">
                 <picture>
                   <img decoding="async" alt="'Hmm, I dunno, Puca...' 'Did we read the grimoire right? I think it should be less... gloopy...' 'Maybe we skipped a step? A secret footnote?' 'Ok, Pu, gosh! What is it?!' 'Oh.'" src="/Illustration/NarrativeArt/FamiliarFollies/FamiliarFolliesPage01.jpg" style="aspect-ratio: 2550 / 3300;"/>
                 </picture>
@@ -471,6 +533,80 @@
       <section class="contentLane" aria-labelledby="MiscellaneousMedia">
         <h1 id="MiscellaneousMedia">Miscellaneous Media</h1>
         <div class="gallery">
+          <article aria-labelledby="SelfPortraits">
+            <button popovertarget="SelfPortraits" popovertargetaction="show" onclick="openModal(this.parentElement.querySelector('dialog'))" aria-label="Open Modal"></button>
+            <picture>
+              <img decoding="async" alt="" src="/Illustration/MiscellaneousMedia/SelfPortraits/cell.jpg"/>
+            </picture>
+            <dialog id="SelfPortraits" tabindex="-1" popover>
+              <div tabindex="-1" class="focusAnchor" autofocus></div>
+              <form class="script" method="dialog" role="none"><button aria-label="Close"><i class="fa fa-xmark"></i></button></form>
+              <noscript><button popovertarget="SelfPortraits" popovertargetaction="hide" aria-label="Close"><i class="fa fa-xmark"></i></button></noscript>
+              <h1>
+                <strong>Self Portraits</strong>
+                <small>Photoshop & Charcoal - 2022</small>
+              </h1>
+              <div style="display:grid; grid-template-columns: 1fr 1fr; gap:inherit;">
+                <picture>
+                  <img decoding="async" alt="Self-portrait wearing flannel and glasses in a desert canyon under a full moon" src="/Illustration/MiscellaneousMedia/SelfPortraits/DesertSceneSelfPortrait.jpg" style="aspect-ratio: 2400 / 3000;"/>
+                </picture>
+                <picture>
+                  <img decoding="async" alt="Self-portrait in downtown wearing a red masquerade mask and a disheveled suit" src="/Illustration/MiscellaneousMedia/SelfPortraits/VillainSelfPortrait.jpg" style="aspect-ratio: 2400 / 3000;"/>
+                </picture>
+              </div>
+              <picture>
+                <img decoding="async" alt="Charcoal Self-portrait of hands running through hair in frustration" src="/Illustration/MiscellaneousMedia/SelfPortraits/FrustratedCharcoalPortrait.jpg" style="aspect-ratio: 2658 / 1957;"/>
+              </picture>
+              <p>These projects were made for my Digital Painting studio. They include "Desert Scene Self Portrait" and "Villain Self Portrait". Both were an exercise in digitally rendering the human form and expressing narratives in the clothing and background environment.
+
+                "Frustrated" was made for my Figure Drawing studio. It is an experimental self-portrait that plays with markmaking in the expression of emotion.
+              </p>
+            </dialog>
+          </article>
+          <article aria-labelledby="WhyDoAliensAbductCows">
+            <button popovertarget="WhyDoAliensAbductCows" popovertargetaction="show" onclick="openModal(this.parentElement.querySelector('dialog'))" aria-label="Open Modal"></button>
+            <picture>
+              <img decoding="async" alt="" src="/Illustration/MiscellaneousMedia/WhyDoAliensAbductCows/cell.jpg"/>
+            </picture>
+            <dialog id="WhyDoAliensAbductCows" tabindex="-1" popover>
+              <div tabindex="-1" class="focusAnchor" autofocus></div>
+              <form class="script" method="dialog" role="none"><button aria-label="Close"><i class="fa fa-xmark"></i></button></form>
+              <noscript><button popovertarget="WhyDoAliensAbductCows" popovertargetaction="hide" aria-label="Close"><i class="fa fa-xmark"></i></button></noscript>
+              <h1>
+                <strong>Why Do Aliens Abduct Cows?</strong>
+                <small>Adobe Fresco - 2021</small>
+              </h1>
+              <picture>
+                <img decoding="async" alt="A cow in a field being abducted by a flying saucer" src="/Illustration/MiscellaneousMedia/WhyDoAliensAbductCows/WhyDoAliensAbductCows1.jpg" style="aspect-ratio: 2400 / 3600;"/>
+              </picture>
+              <picture>
+                <img decoding="async" alt="Milk carton with various writing on it. 'Terra Milk From Authentic Earth Cows. 2% Low-fat Vitamin D Exp. 4/20/4044. Missing Last Seen 1/13/4002" src="/Illustration/MiscellaneousMedia/WhyDoAliensAbductCows/WhyDoAliensAbductCows2.jpg" style="aspect-ratio: 3000 / 3000;"/>
+              </picture>
+              <picture>
+                <img decoding="async" alt="Aliens eating cookies and milk with a banner that reads 'Take Eat. This is my cookie which has crumbled for you.' arranged similar to the Last Supper" src="/Illustration/MiscellaneousMedia/WhyDoAliensAbductCows/WhyDoAliensAbductCows3.jpg" style="aspect-ratio: 3600 / 2400;"/>
+              </picture>
+              <p>This project was made for my Illustration I studio. The three designs explore the prompt "Why do aliens abduct cows?" each approaching the question from a different perspective, including varying composition sizes.</p>
+            </dialog>
+          </article>
+          <article aria-labelledby="Firebird">
+            <button popovertarget="Firebird" popovertargetaction="show" onclick="openModal(this.parentElement.querySelector('dialog'))" aria-label="Open Modal"></button>
+            <picture>
+              <img decoding="async" alt="" src="/Illustration/MiscellaneousMedia/Firebird/cell.jpg"/>
+            </picture>
+            <dialog id="Firebird" tabindex="-1" popover>
+              <div tabindex="-1" class="focusAnchor" autofocus></div>
+              <form class="script" method="dialog" role="none"><button aria-label="Close"><i class="fa fa-xmark"></i></button></form>
+              <noscript><button popovertarget="Firebird" popovertargetaction="hide" aria-label="Close"><i class="fa fa-xmark"></i></button></noscript>
+              <h1>
+                <strong>Firebird</strong>
+                <small>Colored Pencil - 2020</small>
+              </h1>
+              <picture>
+                <img decoding="async" alt="Colored Pencil illustration of ballerina in orange dress" src="/Illustration/MiscellaneousMedia/Firebird/Firebird.jpg" style="aspect-ratio: 1765 / 3023;"/>
+              </picture>
+              <p>This project was made in an Independent Study. It was a study of the human form as well as rendering different clothing materials.</p>
+            </dialog>
+          </article>
           <article aria-labelledby="Disconnected">
             <button popovertarget="Disconnected" popovertargetaction="show" onclick="openModal(this.parentElement.querySelector('dialog'))" aria-label="Open Modal"></button>
             <picture>
@@ -517,94 +653,10 @@
                   </picture>
                 </div>
               </div>
-              <p>This project was made for my Figure Drawing studio. The work straddles this line between Instagram photoshoot and crime scene, focusing on the contemporary reality of how instantaneous news can affect people. It inspired the curation of my group exhibition "Desensitized," which explored similar themes of overexposure.</p>
-            </dialog>
-          </article>
-          <article aria-labelledby="Frustrated">
-            <button popovertarget="Frustrated" popovertargetaction="show" onclick="openModal(this.parentElement.querySelector('dialog'))" aria-label="Open Modal"></button>
-            <picture>
-              <img decoding="async" alt="" src="/Illustration/MiscellaneousMedia/Frustrated/cell.jpg"/>
-            </picture>
-            <dialog id="Frustrated" tabindex="-1" popover>
-              <div tabindex="-1" class="focusAnchor" autofocus></div>
-              <form class="script" method="dialog" role="none"><button aria-label="Close"><i class="fa fa-xmark"></i></button></form>
-              <noscript><button popovertarget="Frustrated" popovertargetaction="hide" aria-label="Close"><i class="fa fa-xmark"></i></button></noscript>
-              <h1>
-                <strong>Frustrated</strong>
-                <small>Charcoal - 2022</small>
-              </h1>
-              <picture>
-                <img decoding="async" alt="Charcoal self-portrait of myself in glasses with hands through hair" src="/Illustration/MiscellaneousMedia/Frustrated/FrustratedCharcoalPortrait.jpg" style="aspect-ratio: 2658 / 1957;"/>
-              </picture>
-              <p>This project was made for my Figure Drawing studio. It is an experimental self-portrait that plays with mark making in the expression of emotion.</p>
-            </dialog>
-          </article>
-          <article aria-labelledby="Firebird">
-            <button popovertarget="Firebird" popovertargetaction="show" onclick="openModal(this.parentElement.querySelector('dialog'))" aria-label="Open Modal"></button>
-            <picture>
-              <img decoding="async" alt="" src="/Illustration/MiscellaneousMedia/Firebird/cell.jpg"/>
-            </picture>
-            <dialog id="Firebird" tabindex="-1" popover>
-              <div tabindex="-1" class="focusAnchor" autofocus></div>
-              <form class="script" method="dialog" role="none"><button aria-label="Close"><i class="fa fa-xmark"></i></button></form>
-              <noscript><button popovertarget="Firebird" popovertargetaction="hide" aria-label="Close"><i class="fa fa-xmark"></i></button></noscript>
-              <h1>
-                <strong>Firebird</strong>
-                <small>Colored Pencil - 2020</small>
-              </h1>
-              <picture>
-                <img decoding="async" alt="Colored Pencil illustration of ballerina in orange dress" src="/Illustration/MiscellaneousMedia/Firebird/Firebird.jpg" style="aspect-ratio: 1765 / 3023;"/>
-              </picture>
-              <p>This project was made in an Independent Study. It was a study of the human form as well as rendering different clothing materials.</p>
-            </dialog>
-          </article>
-          <article aria-labelledby="DigitalSelfPortraits">
-            <button popovertarget="DigitalSelfPortraits" popovertargetaction="show" onclick="openModal(this.parentElement.querySelector('dialog'))" aria-label="Open Modal"></button>
-            <picture>
-              <img decoding="async" alt="" src="/Illustration/MiscellaneousMedia/DigitalSelfPortraits/cell.jpg"/>
-            </picture>
-            <dialog id="DigitalSelfPortraits" tabindex="-1" popover>
-              <div tabindex="-1" class="focusAnchor" autofocus></div>
-              <form class="script" method="dialog" role="none"><button aria-label="Close"><i class="fa fa-xmark"></i></button></form>
-              <noscript><button popovertarget="DigitalSelfPortraits" popovertargetaction="hide" aria-label="Close"><i class="fa fa-xmark"></i></button></noscript>
-              <h1>
-                <strong>Digital Self Portraits</strong>
-                <small>Photoshop - 2022</small>
-              </h1>
-              <div style="display:grid; grid-template-columns: 1fr 1fr; gap:inherit;">
-                <picture>
-                  <img decoding="async" alt="Self-portrait wearing flannel and glasses in a desert canyon under a full moon" src="/Illustration/MiscellaneousMedia/DigitalSelfPortraits/DesertSceneSelfPortrait.jpg" style="aspect-ratio: 2400 / 3000;"/>
-                </picture>
-                <picture>
-                  <img decoding="async" alt="Self-portrait in downtown wearing a red masquerade mask and a disheveled suit" src="/Illustration/MiscellaneousMedia/DigitalSelfPortraits/VillainSelfPortrait.jpg" style="aspect-ratio: 2400 / 3000;"/>
-                </picture>
-              </div>
-              <p>These projects were made for my Digital Painting studio. They include "Desert Scene Self Portrait" and "Villain Self Portrait". Both were an exercise in digitally rendering the human form and expressing narratives in the clothing and background environment.</p>
-            </dialog>
-          </article>
-          <article aria-labelledby="WhyDoAliensAbductCows">
-            <button popovertarget="WhyDoAliensAbductCows" popovertargetaction="show" onclick="openModal(this.parentElement.querySelector('dialog'))" aria-label="Open Modal"></button>
-            <picture>
-              <img decoding="async" alt="" src="/Illustration/MiscellaneousMedia/WhyDoAliensAbductCows/cell.jpg"/>
-            </picture>
-            <dialog id="WhyDoAliensAbductCows" tabindex="-1" popover>
-              <div tabindex="-1" class="focusAnchor" autofocus></div>
-              <form class="script" method="dialog" role="none"><button aria-label="Close"><i class="fa fa-xmark"></i></button></form>
-              <noscript><button popovertarget="WhyDoAliensAbductCows" popovertargetaction="hide" aria-label="Close"><i class="fa fa-xmark"></i></button></noscript>
-              <h1>
-                <strong>Why Do Aliens Abduct Cows?</strong>
-                <small>Adobe Fresco - 2021</small>
-              </h1>
-              <picture>
-                <img decoding="async" alt="A cow in a field being abducted by a flying saucer" src="/Illustration/MiscellaneousMedia/WhyDoAliensAbductCows/WhyDoAliensAbductCows1.png" style="aspect-ratio: 2400 / 3600;"/>
-              </picture>
-              <picture>
-                <img decoding="async" alt="Milk carton with various writing on it. 'Terra Milk From Authentic Earth Cows. 2% Low-fat Vitamin D Exp. 4/20/4044. Missing Last Seen 1/13/4002" src="/Illustration/MiscellaneousMedia/WhyDoAliensAbductCows/WhyDoAliensAbductCows2.png" style="aspect-ratio: 3000 / 3000;"/>
-              </picture>
-              <picture>
-                <img decoding="async" alt="Aliens eating cookies and milk with a banner that reads 'Take Eat. This is my cookie which has crumbled for you.' arranged similar to the Last Supper" src="/Illustration/MiscellaneousMedia/WhyDoAliensAbductCows/WhyDoAliensAbductCows3.png" style="aspect-ratio: 3600 / 2400;"/>
-              </picture>
-              <p>This project was made for my Illustration I studio. The three designs explore the prompt "Why do aliens abduct cows?" each approaching the question from a different perspective, including varying composition sizes.</p>
+              <p>This project was originally made for my Figure Drawing studio. The work straddles this line between Instagram photoshoot and crime scene, focusing on the mental backlash of consuming the endless instantaneous news now found at our fingertips.
+
+                "Disconnected" inspired the curation of my 2023 group exhibition "Desensitized" at UNC Charlotte. The exhibition confronted the contemporary reality of overexposure to horror and tragedy resulting from social media. We investigated the romanticization of such tragedy and the dangerous power of viewership.
+              </p>
             </dialog>
           </article>
           <article aria-labelledby="Moirai">
@@ -634,7 +686,37 @@
                   <img decoding="async" alt="A side view of Moirai" src="/Illustration/MiscellaneousMedia/Moirai/MoiraiMythologiesProject3.jpg" style="aspect-ratio: 1990 / 1990;"/>
                 </picture>
               </div>
-              <p>This project was made for my 3D Modeling & Digital Fabrication studio. In classical mythology, the three fates respectively spin, draw out, and cut the threads that represent every individual's life. My project is based on this story but takes on a modern twist, referencing our intertwining relationship with technology.</p>
+              <p>This project was made for my 3D Modeling & Digital Fabrication studio. In classical mythology, the three fates respectively spin, draw out, and cut the threads that represent every individual’s life. My project is based on this story but takes on a modern twist, referencing our intertwining relationship with technology.
+
+                "Moirai" was featured in my solo-curated 2023 group exhibition "Desensitized" at UNC Charlotte. The exhibition confronted the contemporary reality of overexposure to horror and tragedy resulting from social media. We investigated the romanticization of such tragedy and the dangerous power of viewership.
+              </p>
+            </dialog>
+          </article>
+          <article aria-labelledby="TheSoundOfChildrenScreamingHasBeenRemoved">
+            <button popovertarget="TheSoundOfChildrenScreamingHasBeenRemoved" popovertargetaction="show" onclick="openModal(this.parentElement.querySelector('dialog'))" aria-label="Open Modal"></button>
+            <picture>
+              <img decoding="async" alt="" src="/Illustration/MiscellaneousMedia/TheSoundOfChildrenScreamingHasBeenRemoved/cell.jpg"/>
+            </picture>
+            <dialog id="TheSoundOfChildrenScreamingHasBeenRemoved" tabindex="-1" popover>
+              <div tabindex="-1" class="focusAnchor" autofocus></div>
+              <form class="script" method="dialog" role="none"><button aria-label="Close"><i class="fa fa-xmark"></i></button></form>
+              <noscript><button popovertarget="TheSoundOfChildrenScreamingHasBeenRemoved" popovertargetaction="hide" aria-label="Close"><i class="fa fa-xmark"></i></button></noscript>
+              <h1>
+                <strong>The Sound Of Children Screaming Has Been Removed</strong>
+                <small>Laser-cut clear acrylic, wood, acrylic paint pen, crayon - 2022</small>
+              </h1>
+              <div style="display:grid; grid-template-columns: 1fr 1fr; gap:inherit;">
+                <picture>
+                  <img decoding="async" alt="Self-portrait wearing flannel and glasses in a desert canyon under a full moon" src="/Illustration/MiscellaneousMedia/TheSoundOfChildrenScreamingHasBeenRemoved/TheSoundOfChildrenScreamingHasBeenRemovedLight.jpg" style="aspect-ratio: 1982 / 1982;"/>
+                </picture>
+                <picture>
+                  <img decoding="async" alt="Self-portrait in downtown wearing a red masquerade mask and a disheveled suit" src="/Illustration/MiscellaneousMedia/TheSoundOfChildrenScreamingHasBeenRemoved/TheSoundOfChildrenScreamingHasBeenRemoved.jpg" style="aspect-ratio: 2007 / 2048;"/>
+                </picture>
+              </div>
+              <p>This project confronts our overexposure to tragedy in an increasingly online world. It was inspired by security footage of the Robb Elementary School shooting in Uvalde, Texas—an all too familiar event that triggers simultaneous outrage and numbness. I point to how the occurrence of devastating horrors no longer feels novel. Now incorporated into everyday consumption, heightened awareness of such events leads to normalization.
+
+                "The Sound of Children Screaming Has Been Removed" was featured in my solo-curated 2023 group exhibition "Desensitized" at UNC Charlotte. The exhibition confronted the contemporary reality of overexposure to horror and tragedy resulting from social media. We investigated the romanticization of such tragedy and the dangerous power of viewership
+              </p>
             </dialog>
           </article>
         </div>

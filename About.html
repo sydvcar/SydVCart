@@ -4,10 +4,12 @@
     <meta charset="UTF-8"/>
     <title>SydVC - About Me</title>
     <meta name="description" content="My name is Sydney Carmer or 'SydVC' and I am a multimedia artist based in North Carolina. I'm known for my spooky but playful concepts and diverse ideas."/>
+    <meta name="og:image" content="/URLPreview.jpg"/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <link rel="icon" type="image/x-icon" href="/CartoonSelfPortraitIcon.png"/>
     <link rel="preload" href="/Fonts/acier-text-solid.ttf" as="font" type="font/ttf" crossorigin />
     <link rel="preload" href="/Fonts/AdelleSansEXT-Regular.ttf" as="font" type="font/ttf" crossorigin />
+    <link rel="preload" href="/Fonts/Adelle Sans Bold.otf" as="font" type="font/otf" crossorigin />
     <link rel="stylesheet" href="stylesheet.css"/>
     <noscript><style>.script{display:none}</style></noscript>
     <style>
@@ -35,6 +37,21 @@
       {
         color:var(--ColorHighlight);
       }
+      .trifold
+      {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+      }
+      .trifold .featureList
+      {
+        flex:1;
+      }
+      .trifold .featureList picture,
+      .trifold .featureList img
+      {
+        width: 20em;
+      }
     </style>
   </head>
   <body>
@@ -54,6 +71,7 @@
           <a href="/About" class="active"><span>About</span></a>
           <a href="/DigitalMedia"><span>Digital Media</span></a>
           <a href="/Illustration"><span>Illustration</span></a>
+          <a href="/ClientWork"><span>Client Work</span></a>
         </nav>
       </dialog>
       <button popovertarget="sidebar" popovertargetaction="show" onclick="openModal(this.parentElement.querySelector('dialog'))" aria-label="Open sidebar nav"><i class="fa fa-bars"></i></button>
@@ -65,26 +83,107 @@
       </dialog>
     </noscript>
     <main>
-      <article class="contentLane" aria-labelledby="MeetSydney">
+      <section class="contentLane" aria-labelledby="MeetSydney">
         <h1 id="MeetSydney">Meet Sydney Carmer</h1>
-        <div class="feature">
-          <picture>
-            <img decoding="async" alt="Sydney Carmer in a jacket" src="/About/Headshot.jpg" style="aspect-ratio: 1078/1344;"/>
-          </picture>
+        <article class="feature">
+          <video class="widescreen" controls poster="/About/IntroVideo-thumbnail.jpg" preload="metadata">
+            <source type="video/mp4" src="/About/IntroVideo.mp4">
+          </video>
           <div>
-            <p>My name is Sydney Carmer (she/they), also known by my online handle SydVC, and I am a multimedia artist based in North Carolina. In May 2024 I will earn my BFA in Art with a double concentration in Digital Media and Illustration at The University of North Carolina at Charlotte. I am also in the Arts + Architecture Honors Program, and double minored in Psychology and Art History.
+            <p>My name is Sydney Carmer (she/they), also known by my online handle SydVC, and I am a multimedia artist based in North Carolina.
 
-              I specialize in post-production film and motion graphics but pride myself on being a sort of jack-of-all-trades. Any creative challenge can be solved with my wide skill set. I'm an organized, hard-working quick learner who is always ready to adapt to feedback.
+              I graduated from The University of North Carolina at Charlotte in May 2024 with a BFA in Art, double concentrating in Digital Media and Illustration. I was also in the Arts + Architecture Honors Program, and double minored in Psychology and Art History.
+
+              I specialize in video editing and 2D animation but pride myself on being a sort of jack-of-all-trades. I'm organized, hard-working, and a quick learner who is always ready to adapt to feedback.
+
+              My artwork often merges dark and playful themes, making the spooky and supernatural more approachable for a general audience. I love incorporating humor and clever wordplay into my designs while not shying away from heavier topics.
+
+              Outside of art, I spend my time watching movies, reading, and playing card games with my family.
 
               Please don't hesitate to reach out through my business email: <a href="mailto:sydvcart@gmail.com">sydvcart@gmail.com</a>
             </p>
             <div id="ResumeLinks">
               <a class="icon" target="new" title="Email"  href="mailto:sydvcart@gmail.com"><i class="fa fa-envelope"></i></a>
-              <a class="icon" target="new" title="Resume" href="/Documents/SydneyCarmerResume.pdf"><i class="fa fa-id-card"></i></a>
+              <a class="icon" target="new" title="Resume" href="/Documents/SydneyCarmerResume.pdf"><i class="fa fa-user-circle"></i></a>
+              <a class="icon" target="new" title="CV" href="/Documents/SydneyCarmerCV.pdf"><i class="fa fa-book"></i></a>
             </div>
           </div>
-        </div>
-      </article>
+        </article>
+      </section>
+      <section class="contentLane" aria-labelledby="Thesis">
+        <article class="featureList">
+          <h2 id="Thesis">
+            <strong>Undergraduate Honors Thesis</strong>
+          </h2>
+          <p>My Honors Thesis for the Arts + Architecture Honors Program at UNC Charlotte was entitled <b>Histories of New Media: The Contemporary Discourse of Digital Arts</b>.
+
+            As part of the research project, I created a syllabus for a new media art history seminar and studio hybrid course at the undergraduate university level. This included five units complete with readings, key artists/artwork, and accompanying studio assignments.
+
+            The emerging field of "new media" or "digital arts" has become a pressing topic for artists and art historians alike in recent years, but this discourse-the statements surrounding digital art practice and the artifacts that result-is anything but novel.
+
+            I chose to explore the intimate relationship between art and science by analyzing the history of new media and revealing an ongoing transformation of its related discourse rather than reducing it to a simple rivalry or novelty.
+
+            This research was also presented and awarded at the 2024 Undergraduate Research Conference at UNC Charlotte. Read my full thesis <a target="new" href="/Documents/HonorsThesis.pdf">here</a>.
+          </p>
+        </article>
+      </section>
+      <div class="contentLane trifold">
+        <article class="featureList">
+          <h2>
+            <strong>Awards</strong>
+          </h2>
+          <picture>
+            <img decoding="async" alt="Sydney Carmer accepting an award" src="/About/Awards.jpg" style="aspect-ratio: 1200/1200;"/>
+          </picture>
+          <dl>
+            <div><dt>Best Film</dt><dd>2024 Gold Reel Film Festival</dd></div>
+            <div><dt>Best Documentary</dt><dd>2024 Gold Reel Film Festival</dd></div>
+            <div><dt>3rd Place</dt><dd>2024 UNCC Juried Student Art Exhibition</dd></div>
+            <div><dt>Multidisciplinary Poster Presentation Award</dt><dd>2024 Undergraduate Research Conference</dd></div>
+            <div><dt>Senior Award in Studio Art</dt><dd>2024 UNC Charlotte</dd></div>
+            <div><dt>Honorable Mention</dt><dd>2022 UNCC Juried Student Art Exhibition</dd></div>
+            <div><dt>Area Award in Digital Media</dt><dd>2022 UNC Charlotte</dd></div>
+            <div><dt>Junior Award in Studio Art</dt><dd>2022 UNC Charlotte</dd></div>
+            <div><dt>Girl Scout Gold Award</dt><dd>2018 GSUSA</dd></div>
+          </dl>
+        </article>
+        <article class="featureList">
+          <h2>
+            <strong>Exhibitions</strong>
+          </h2>
+          <picture>
+            <img decoding="async" alt="Desensitized Exhibition" src="/About/Exhibitions.jpg" style="aspect-ratio: 1200/1200;"/>
+          </picture>
+          <dl>
+            <div><dt>Unfolding Worlds</dt><dd>2024 UNCC Senior BFA Show</dd></div>
+            <div><dt>2024 UNCC Gold Reel Film Festival</dt></div>
+            <div><dt>2024 UNCC Juried Student Art Exhibition</dt></div>
+            <div><dt>2023 UNCC Global Studies Exhibition</dt></div>
+            <div><dt>2023 UNCC Gold Reel Film Festival</dt></div>
+            <div><dt>Starstruck</dt><dd>2023 UNCC Senior BFA Show</dd></div>
+            <div><dt>Desensitized</dt><dd>Solo-Curated Group Exhibition at UNCC</dd></div>
+            <div><dt>2022 UNCC Gold Reel Film Festival</dt></div>
+            <div><dt>2022 UNCC Juried Student Art Exhibition</dt></div>
+            <div><dt>2021 UNCC Juried Student Art Exhibition</dt></div>
+          </dl>
+        </article>
+        <article class="featureList">
+          <h2>
+            <strong>Publications</strong>
+          </h2>
+          <picture>
+            <img decoding="async" alt="Nova Magazine Cover" src="/About/Publications.jpg" style="aspect-ratio: 1200/1200;"/>
+          </picture>
+          <dl>
+            <div><dt>Nova Literary-Arts Magazine Volume 55</dt><dd>2024</dd></div>
+            <div><dt>Niner Times Humans of UNCC Article</dt><dd>2023</dd></div>
+            <div><dt>Niner Times Desensitized Article</dt><dd>2023</dd></div>
+            <div><dt>Nova Literary-Arts Magazine Volume 54</dt><dd>2023</dd></div>
+            <div><dt>Midas Magazine Halloween Anthology</dt><dd>2022</dd></div>
+            <div><dt>Nova Literary-Arts Magazine Volume 53</dt><dd>2022</dd></div>
+          </dl>
+        </article>
+      </div>
     </main>
     <footer>
       <a class="icon" title="Back to Top" href="#topofpage"><i class="fa fa-arrow-up"></i></a>
