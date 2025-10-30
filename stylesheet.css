@@ -1,3 +1,4 @@
+@import url("https://use.typekit.net/ksv7glm.css");
 @font-face
 {
     font-family: 'Acier BAT Text Solid';
@@ -8,25 +9,6 @@
         url('/Fonts/acier-text-solid.ttf') format('truetype');
     ascent-override: 95%; /* Manual adjustment to deal with all-caps font */
     size-adjust: 135%;
-}
-@font-face
-{
-    font-family: 'Adelle Sans';
-    unicode-range: U+000-5FF; /* Download only latin glyphs */
-    font-display: swap; /* Use system font until ready */
-    src:local('AdelleSansEXT-Regular'), /* FullName + PostScriptName */
-        url('/Fonts/AdelleSansEXT-Regular.ttf') format('truetype');
-    font-weight: normal;
-}
-@font-face
-{
-    font-family: 'Adelle Sans';
-    unicode-range: U+000-5FF; /* Download only latin glyphs */
-    font-display: swap; /* Use system font until ready */
-    src:local('AdelleSans-Bold'), /* FullName + PostScriptName */
-        url('/Fonts/Adelle Sans Bold.otf') format('opentype');
-    font-weight: bold;
-    ascent-override: 120%; /* Manual adjustment to deal with miss-align with normal weight */
 }
 /*
 ===============
@@ -278,7 +260,7 @@ Site Structure Styling
     --ColorFeature:#DEF2F5;
 
     --FontHeading: "Acier BAT Text Solid", sans-serif;
-    --FontBody: "Adelle Sans", sans-serif;
+    --FontBody: "adelle-sans", sans-serif;
 
     -webkit-tap-highlight-color: transparent;
 }
