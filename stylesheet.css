@@ -1,15 +1,4 @@
 @import url("https://use.typekit.net/ksv7glm.css");
-@font-face
-{
-    font-family: 'Acier BAT Text Solid';
-    unicode-range: U+000-5FF; /* Download only latin glyphs */
-    font-display: swap; /* Use system font until ready */
-    src:local('Acier Text Solid'), /* FullName */
-        local('Acier-TextSolid'), /* PostScriptName */
-        url('/Fonts/acier-text-solid.ttf') format('truetype');
-    ascent-override: 95%; /* Manual adjustment to deal with all-caps font */
-    size-adjust: 135%;
-}
 /*
 ===============
 Generic Styling (Using an anonymous layer to prevent specificity issues)
@@ -259,7 +248,7 @@ Site Structure Styling
     --ColorBackdrop: #00000099;
     --ColorFeature:#DEF2F5;
 
-    --FontHeading: "Acier BAT Text Solid", sans-serif;
+    --FontHeading: "acier-bat-solid", sans-serif;
     --FontBody: "adelle-sans", sans-serif;
 
     -webkit-tap-highlight-color: transparent;
