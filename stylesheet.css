@@ -28,6 +28,10 @@ Generic Styling (Using an anonymous layer to prevent specificity issues)
         justify-content: stretch;
         align-items: stretch;
     }
+    li
+    {
+        display: list-item;
+    }
     dialog:not(:where([open],:popover-open))
     {
         display: none;
@@ -45,17 +49,23 @@ button[popovertarget]
 {
     text-decoration: none;
 }
+ul ul
+{
+    padding-left:2em;
+}
 p
 {
     white-space: pre-line; /* Wraps text while preserving newlines (make sure text starts immediately following tag or you may see a leading new line)*/
     display: block;
     line-height: 1.4em;
 }
-p *
+p *,
+li :not(ul,ol,li)
 {
     display: inline;
 }
-p :any-link
+p :any-link,
+li :any-link
 {
     color: var(--ColorAccent);
 }
