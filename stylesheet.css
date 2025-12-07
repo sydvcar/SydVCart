@@ -823,7 +823,7 @@ Carousel Styling
 Screen Size Dependent Styling
 =============================
 */
-@media not (width < 950px)
+@media not (width < 1000px)
 {
     header dialog:not(:where([open],:popover-open))
     {
@@ -868,7 +868,7 @@ Screen Size Dependent Styling
         font-size: min(1vw, 1em);
     }
 }
-@media (width < 950px)
+@media (width < 1000px)
 {
     html
     {
