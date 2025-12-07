@@ -162,6 +162,11 @@ video:fullscreen
 {
     object-fit: contain !important;
 }
+video.ultrawidescreen,
+iframe.ultrawidescreen
+{
+    aspect-ratio: 128/27; /* Can't use auto, would take poster aspect-ratio */
+}
 video.widescreen,
 iframe.widescreen
 {
@@ -475,6 +480,11 @@ footer a:where(:hover,:focus)
     padding-bottom: .1em;
     font-size: 2.6em;
     line-height: 1em;
+}
+.feature.banner h2,
+.featureList.banner h2
+{
+    text-align: center;
 }
 .featureList h2
 {
@@ -838,6 +848,10 @@ Screen Size Dependent Styling
         display: grid;
         grid-template-columns: 1fr 1fr;
         gap:inherit;
+    }
+    .feature.banner
+    {
+        grid-template-columns: 1fr;
     }
     .gallery figure
     {
