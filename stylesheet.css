@@ -49,9 +49,9 @@ button[popovertarget]
 {
     text-decoration: none;
 }
-ul ul
+ul
 {
-    padding-left:2em;
+    padding-left:3ch;
 }
 p
 {
@@ -60,9 +60,16 @@ p
     line-height: 1.4em;
 }
 p *,
-li :not(ul,ol,li)
+li :not(ul,ol,li),
+figcaption,
+i
 {
     display: inline;
+}
+figcaption
+{
+    text-align: center;
+    padding: .5em;
 }
 p :any-link,
 li :any-link
