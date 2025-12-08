@@ -76,7 +76,8 @@ li :any-link
 {
     color: var(--ColorAccent);
 }
-p :any-link:where(:hover,:focus)
+p :any-link:where(:hover,:focus),
+li :any-link:where(:hover,:focus)
 {
     color:var(--ColorHighlight)
 }
