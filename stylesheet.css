@@ -339,6 +339,10 @@ dt + dd::before
     font-size: 2em;
     flex-direction: inherit;
 }
+.icon > i
+{
+    display: inline-flex;
+}
 @keyframes Bob
 {
     0%, 100%
