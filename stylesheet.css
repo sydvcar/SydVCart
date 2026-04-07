@@ -562,8 +562,11 @@ Gallery Styling
 */
 .gallery
 {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    /* display: grid;
+    grid-template-columns: 1fr 1fr 1fr; */
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
     justify-content: center;
     gap: 3em;
 }
@@ -604,6 +607,7 @@ Gallery Styling
 }
 .gallery article
 {
+    width: calc(33% - 3em); /*Approximate 1fr with flex*/
     position:relative;
     font-size: min(1vw, 1em);
     overflow: clip;
@@ -871,6 +875,12 @@ Screen Size Dependent Styling
         grid-template-columns: 1fr 1fr;
         gap:inherit;
     }
+    .feature.full
+    {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap:inherit;
+    }
     .feature.banner
     {
         grid-template-columns: 1fr;
@@ -893,7 +903,11 @@ Screen Size Dependent Styling
     .gallery
     {
         /* Change to 1 column */
-        grid-template-columns: 1fr;
+        /* grid-template-columns: 1fr; */
+    }
+    .gallery article
+    {
+        width: 100%;
     }
     .gallery dialog:not(:where([open],:popover-open)) h1
     {
