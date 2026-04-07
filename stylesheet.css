@@ -879,6 +879,7 @@ Screen Size Dependent Styling
     {
         display: grid;
         grid-template-columns: 1fr;
+        justify-items: center;
         gap:inherit;
     }
     .feature.banner
