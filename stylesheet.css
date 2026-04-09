@@ -195,6 +195,40 @@ iframe.portrait
 {
     aspect-ratio: 9/16; /* Can't use auto, would take poster aspect-ratio */
 }
+object
+{
+    /* Reasonable styles in the case of broken imgs */
+    position: relative;
+    justify-content: center;
+    align-items: center;
+}
+object::before
+{
+    content:"";
+    position: absolute;
+    border: 1px solid;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    pointer-events: none;
+}
+object.letter
+{
+    aspect-ratio: 17/22; /* Expects 8.5 x 11 = 1:1.29 */
+}
+object.A4
+{
+    aspect-ratio: 827/1169; /* Expects 8.27 x 11.69 = 1:1.41*/
+}
+object.letter.landscape
+{
+    aspect-ratio: 22/17;
+}
+object.A4.landscape
+{
+    aspect-ratio: 1169/827;
+}
 /*
 ===========================
 Trimmed FontAwesome Styling
