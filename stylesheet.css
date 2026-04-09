@@ -195,7 +195,7 @@ iframe.portrait
 {
     aspect-ratio: 9/16; /* Can't use auto, would take poster aspect-ratio */
 }
-object
+object /* TODO Consider async loading */
 {
     /* Reasonable styles in the case of broken imgs */
     position: relative;
@@ -608,10 +608,10 @@ Gallery Styling
 {
     margin:auto; /* Centers Modal */
     background-color: var(--ColorFeature);
-    max-width: min(1000px, calc(100% - 20em));
+    max-width: min(1000px, calc(100% - 125px));
     color: var(--ColorMain);
     padding:40px;
-    max-height: calc(100% - 4em);
+    max-height: calc(100% - 50px);
     gap: 2em;
 }
 .gallery dialog form,
@@ -643,7 +643,7 @@ Gallery Styling
 {
     width: calc(33% - 3em); /*Approximate 1fr with flex*/
     position:relative;
-    font-size: min(1vw, 1em);
+    /* font-size: min(1vw, 1em); */
     overflow: clip;
     aspect-ratio: 1;
     contain:content;
