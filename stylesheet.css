@@ -203,6 +203,10 @@ object /* TODO Consider async loading */
 }
 object::before
 {
+    content:"This browser does not support embedded pdfs";
+}
+object::after
+{
     content:"";
     position: absolute;
     border: 1px solid;
@@ -957,5 +961,11 @@ Screen Size Dependent Styling
     .gallery dialog:not(:where([open],:popover-open)) h1
     {
         font-size: 3em;
+    }
+    .gallery dialog
+    {
+        margin: 0;
+        max-width: 100%;
+        max-height: 100%;
     }
 }
